@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Land | Gallery</title>
+    <link rel="shortcut icon" href="AppIcon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+
+        body {
+            background-color: greenyellow;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            width: 100%;
+            background-color: green;
+            position: sticky;
+            top: 0px;
+            box-shadow: 0 0 20px black;
+            z-index: 99;
+        }
+
+        nav ul {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        nav li {
+            height: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+        }
+
+        nav a:hover {
+            background-color: white;
+            cursor: pointer;
+            color: green;
+            font-weight: bolder;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+            background-color: black;
+        }
+
+        /* Here starts the css code for the main Gallery Photos */
+        .main {
+            background-color: orange;
+            width: 800px;
+            margin: auto;
+            position: relative;
+            top: 25px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto;
+            column-gap: 2px;
+            row-gap: 2px;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .main img {
+            width: 100%;
+        }
+
+        .main img:hover {
+            scale: 1.4;
+            border-radius: 20px;
+            box-shadow: 0 0 45px 15px red;
+            z-index: 99;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a id="webNameLogo" href="#">LEARNING LAND</a></li>
+            <li><a href="LearningLand.html">HOME</a></li>
+            <li><a href="#">BLOGS</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">LIBRARY</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <img src="avengers/FB_IMG_16707673314683993.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673274168790.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673218117615.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673480855787.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673244930800.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673626737175.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673528920910.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673294674874.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673354973585.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673506037507.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673458429228.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673408875157.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673375917637.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673433897018.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673550495002.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673577171764.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673653742567.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673602359777.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673680956633.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673335468410.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673550495002.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673577171764.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673653742567.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673602359777.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673680956633.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673480855787.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673244930800.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673354973585.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673577171764.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673653742567.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673602359777.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673680956633.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673480855787.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673244930800.jpg" alt="insert-img">
+        <img src="avengers/FB_IMG_16707673354973585.jpg" alt="insert-img">
+    </div>
+</body>
+
+</html>

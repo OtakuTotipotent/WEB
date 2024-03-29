@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <style>
+        body {
+            background-color: darkslategray;
+        }
+
+        fieldset {
+            width: 500px;
+            margin: 10px auto 0 auto;
+            padding: 20px;
+            border: 12px solid cornflowerblue;
+            border-radius: 32px;
+        }
+
+        h2 {
+            color: rgb(255, 255, 255);
+            margin: 0px 8px 0px 8px;
+        }
+
+        .inputs {
+            width: 100%;
+            font-family: poppins;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #64c5f5;
+        }
+
+        textarea,
+        .inputs input {
+            font-size: 1.05rem;
+            font-family: poppins;
+            width: 95%;
+            padding: 6px;
+            padding-left: 16px;
+            background-color: #64c5f5;
+            border: none;
+            border-radius: 6px;
+        }
+
+        .pseudoInputs {
+            font-family: poppins;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: cornflowerblue;
+        }
+
+        hr {
+            border: 5px solid cornflowerblue;
+            border-radius: 5px;
+        }
+
+        .insertImage {
+            width: 85%;
+            margin-left: 75px;
+        }
+
+        .buttons {
+            width: 40%;
+            font-family: poppins;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: none;
+            border-radius: 5px;
+            background-color: cornflowerblue;
+            margin-left: 32px;
+            color: white;
+            padding: 5px;
+            text-transform: lowercase;
+        }
+
+        .buttons:hover{
+            cursor: pointer;
+            background-color: #64c5f5;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="submit">
+        <fieldset>
+            <legend>
+                <h2>
+                    SIGN UP
+                </h2>
+            </legend>
+            <p class="inputs">NAME :
+                <input type="text" required placeholder="Please Enter Your complete IDC Name ONLY">
+            </p>
+            <p class="inputs">EMAIL:
+                <input type="email" required placeholder="Please enter Your personal email address here" name="" id="">
+            </p>
+            <p class="inputs">PHONE:
+                <input type="number" required placeholder="Please enter Your personal phone number here">
+            </p>
+            <p class="inputs">ADDRESS :
+                <input type="text" required placeholder="Please enter here Your current residence city / Distr">
+            </p>
+            <p class="inputs">PASSWORD :
+                <input type="password" required placeholder="Please create a strong, unique &  secure password">
+            </p>
+            <p class="lowerInputs inputs">Queries :
+                <textarea name="message" id="" cols="20" rows="1"></textarea>
+            </p>
+            <hr>
+            <p class="pseudoInputs">Your Gender
+                <input type="radio" value="m" name="Gender"> Male
+                <input type="radio" value="f" name="Gender"> Female
+                <input type="radio" value="o" name="Gender">
+                Other
+            </p>
+            <p class="pseudoInputs">Your Hobby(s)
+                <input type="checkbox"> Games
+                <input type="checkbox"> Speech
+                <input type="checkbox"> Reading
+            </p>
+            <hr>
+            <p class="pseudoInputs insertImage">Upload Your Photo :
+                <input type="file" name="Image">
+            </p>
+            <input class="buttons" type="submit" value="S I G N - U P" class="endButtons">
+            <input class="buttons" type="reset" value="R E S E T" class="endButtons">
+        </fieldset>
+
+    </form>
+
+
+
+
+</body>
+
+</html>
