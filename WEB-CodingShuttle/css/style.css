@@ -324,3 +324,58 @@ header {
 .fcard-9 {
     color: #3b77a7;
 }
+
+/* BIG FEATURES SECTION */
+.big-feature-section {
+    padding: 30px 20px;
+}
+
+.big-feature-container-1,
+.big-feature-container-2,
+.big-feature-container-3 {
+    gap: 30px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.big-feature-container-1 {
+    background-color: #c6c9c6;
+}
+
+.big-feature-container-1:hover {
+    background-color: #e5e6ea;
+    transition: 0.6s ease-in-out;
+}
+
+.big-feature-container-2 {
+    background-color: #de955b;
+}
+
+.big-feature-container-2:hover {
+    background-color: #ffbf8a;
+    transition: 0.6s ease-in-out;
+}
+
+.big-feature-container-3 {
+    background-color: #ff99ac;
+}
+
+.big-feature-container-3:hover {
+    background-color: #ff607c;
+    transition: 0.6s ease-in-out;
+}
+
+.feature-img img {
+    width: 100%;
+    border-radius: 7px;
+}
+
+.feature-img:hover {
+    scale: 1.07;
+    transition: 0.6s ease-in-out;
+}
+
+.features-desc {
+    flex-direction: column;
+    align-items: flex-start;
+}
