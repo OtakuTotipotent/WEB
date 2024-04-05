@@ -1,8 +1,9 @@
 /* ~~~~~~~~~ RESET    CODE ~~~~~~~~~~~~ */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+    scrollbar-width: thin;
 }
 
 :root {
@@ -122,24 +123,26 @@ nav {
 
 .main-nav {
     justify-content: space-between;
-    margin-top: 10px;
+    padding: 12px;
     font-weight: 600;
     backdrop-filter: blur(30px);
 }
 
-.company-logo,
-.company-logo img {
-    width: 110px;
-    border-radius: 25px;
-    margin-top: 6px;
-    box-shadow: 0 0 20px 2px pink;
+.company-logo {
+    width: 116px;
 }
 
-.company-logo:hover,
+.company-logo img {
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 6px;
+    box-shadow: 0 0 40px 16px palevioletred;
+    transition: 0.6s ease-in-out;
+}
+
 .company-logo img:hover {
-    scale: 1.6;
-    transition: 0.4s ease-in-out;
-    box-shadow: 0 0 30px 16px pink;
+    scale: 1.2;
+    box-shadow: 0 0 30px 16px palevioletred;
 }
 
 .nav-links {
@@ -166,12 +169,12 @@ header {
 .header-right img {
     width: 300px;
     box-shadow: 0 10px 0 0px #ca2181;
+    transition: 0.8s ease-in-out;
 }
 
 .header-right img:hover {
     scale: 1.2;
     box-shadow: 0 0 9px 5px #a112ff;
-    transition: 0.4s ease-in-out;
 }
 
 .header-left {
@@ -200,6 +203,7 @@ header {
 
 .company-logos img {
     height: 60px;
+    transition: all 0.5s ease-in-out;
 }
 
 .company-logos img:hover {
@@ -336,6 +340,7 @@ header {
     gap: 30px;
     padding: 20px;
     border-radius: 12px;
+    transition: all 0.8s ease-in-out;
 }
 
 .big-feature-container-1 {
@@ -344,7 +349,6 @@ header {
 
 .big-feature-container-1:hover {
     background-color: #e5e6ea;
-    transition: 0.6s ease-in-out;
 }
 
 .big-feature-container-2 {
@@ -370,12 +374,155 @@ header {
     border-radius: 7px;
 }
 
+.feature-img {
+    transition: all 0.6s ease-in-out;
+}
+
 .feature-img:hover {
     scale: 1.07;
-    transition: 0.6s ease-in-out;
 }
 
 .features-desc {
     flex-direction: column;
     align-items: flex-start;
+}
+
+/* EXAMPLES AREA */
+.examples-area {
+    margin-top: 20px;
+    background: linear-gradient(rgb(34, 148, 237, 0.5), rgb(34, 148, 237, 0.9));
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    transition: all 0.8s ease-in-out;
+}
+
+.examples-area:hover {
+    scale: 1.05;
+}
+
+.example-cards {
+    min-width: 23%;
+    min-height: 300px;
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.8s ease-in-out;
+}
+
+.example-cards:hover {
+    scale: 1.05;
+}
+
+.example-cards-heading {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: palevioletred;
+}
+
+.exCard-1 {
+    background: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.8)), url(../img/ExampleSectionImages/a\ green\ library.jpg);
+    background-size: cover;
+}
+
+.exCard-1 h3 {
+    color: paleturquoise;
+}
+
+.exCard-2 {
+    background: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.8)), url(../img/ExampleSectionImages/an\ ai\ skull\ image.jpg);
+    background-size: 100%;
+}
+
+.exCard-2 h3 {
+    color: rgb(220, 253, 169);
+}
+
+.exCard-3 {
+    background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.6)), url(../img/ExampleSectionImages/my\ programming\ bench.jpg);
+    background-size: 100%;
+}
+
+.exCard-3 h3 {
+    color: white;
+}
+
+.exCard-4 {
+    background: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.8)), url(../img/ExampleSectionImages/a\ robot\ and\ a\ man.jpg);
+    background-size: 100%;
+}
+
+.exCard-4 h3 {
+    color: rgb(255, 154, 154);
+}
+
+/* CTA SECTION */
+
+.cta-allSpace {
+    margin-top: 26px;
+    background-color: #000000;
+    border-radius: 32px;
+    flex-direction: column;
+    gap: 26px;
+    color: white;
+    padding: 52px 12px 52px 12px;
+    transition: all 1.5s ease-in-out;
+}
+
+.cta-allSpace:hover {
+    border-radius: 16px;
+    background-color: pink;
+    color: var(--primaryTextColor);
+}
+
+.cta-btn {
+    border-radius: 100px;
+    color: white !important;
+    background-color: palevioletred;
+    box-shadow: 0 0 16px 6px palevioletred;
+    transition: 1s ease-in-out;
+}
+
+.cta-btn:hover {
+    scale: 1.2;
+    color: white !important;
+    background-color: palevioletred;
+    box-shadow: 0 0 16px 6px palevioletred;
+}
+
+/* FOOTER SECTION */
+
+footer {
+    padding-block: 80px;
+    background-color: #ebf2fa;
+    border-bottom: 0;
+    border-radius: 200px 200px 0 0;
+}
+
+.footer-section {
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* SUB FOOTER SECTION */
+
+.hover-link img {
+    width: 16px;
+}
+
+.subFooter {
+    background-color: #b9cde4;
+    padding: 12px;
+}
+
+.subFooter-container {
+    justify-content: center;
+    gap: 30px;
 }
