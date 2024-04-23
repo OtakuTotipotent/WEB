@@ -72,6 +72,36 @@
         .towColumns {
             grid-column: span 2;
         }
+
+        /* MEDIA QUERIES */
+        @media screen and (max-width:1024px) {
+            body {
+                flex-direction: column;
+            }
+
+            .gallery {
+                width: 100%;
+                grid-auto-rows: 200px;
+            }
+
+            .intro {
+                padding-top: 14px;
+            }
+
+            .intro p {
+                width: 80%;
+                margin: auto;
+            }
+        }
+
+        @media screen and (max-width:640px) {
+            .photos {
+                grid-column: span 3;
+            }
+            .gallery{
+                grid-auto-rows: 200px;
+            }
+        }
     </style>
 </head>
 
