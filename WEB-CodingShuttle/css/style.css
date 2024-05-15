@@ -71,6 +71,11 @@ ul {
     max-width: 1180px;
     margin: auto;
     padding-inline: 20px;
+    overflow: hidden;
+}
+
+.container-overflowed {
+    overflow: visible;
 }
 
 .primary-button {
@@ -123,26 +128,27 @@ nav {
 
 .main-nav {
     justify-content: space-between;
-    padding: 12px;
+    padding: 2px;
+    padding-left: 12px;
     font-weight: 600;
     backdrop-filter: blur(30px);
 }
 
 .company-logo {
-    width: 116px;
+    width: 92px;
 }
 
 .company-logo img {
     width: 100%;
     border-radius: 16px;
     margin-top: 6px;
-    box-shadow: 0 0 40px 16px palevioletred;
+    box-shadow: 0 0 4px 6px slateblue;
     transition: 0.6s ease-in-out;
 }
 
 .company-logo img:hover {
-    scale: 1.2;
-    box-shadow: 0 0 30px 16px palevioletred;
+    scale: 1.04;
+    box-shadow: 0 0 3px 6px palevioletred;
 }
 
 .nav-links {
@@ -152,6 +158,10 @@ nav {
 .nav-links ul {
     justify-content: end;
     gap: 30px;
+}
+
+.nav-toggle {
+    display: none;
 }
 
 /* HEADER CLASSES */
@@ -165,16 +175,10 @@ header {
     gap: 50px;
 }
 
-.header-right,
-.header-right img {
-    width: 300px;
-    box-shadow: 0 10px 0 0px #ca2181;
-    transition: 0.8s ease-in-out;
-}
-
 .header-right img:hover {
-    scale: 1.2;
+    scale: 1.1;
     box-shadow: 0 0 9px 5px #a112ff;
+    border-radius: 18px;
 }
 
 .header-left {
@@ -189,6 +193,11 @@ header {
     margin-top: 30px;
 }
 
+.header-right img {
+    width: 100%;
+    transition: 0.8s ease-in-out;
+}
+
 /* COMPANIES SECTION */
 
 .companies-heading {
@@ -197,8 +206,10 @@ header {
 }
 
 .company-logos {
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: auto 50px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .company-logos img {
@@ -395,6 +406,7 @@ header {
     border-radius: 5px;
     justify-content: space-between;
     transition: all 0.8s ease-in-out;
+    flex-wrap: wrap;
 }
 
 .examples-area:hover {
@@ -403,7 +415,7 @@ header {
 
 .example-cards {
     min-width: 23%;
-    min-height: 300px;
+    height: 300px;
     position: relative;
     border-radius: 10px;
     transition: all 0.8s ease-in-out;
@@ -498,6 +510,11 @@ footer {
     background-color: #ebf2fa;
     border-bottom: 0;
     border-radius: 200px 200px 0 0;
+    transition: all 0.8s ease-in-out;
+}
+
+footer:hover {
+    background-color: #a6cce2;
 }
 
 .footer-section {
