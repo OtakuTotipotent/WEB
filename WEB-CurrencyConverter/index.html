@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency | Converter</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="container">
+        <h2>
+            CURRENCY CONVERTER
+        </h2>
+        <form action="">
+            <fieldset>
+                <legend>
+                    <h5> Enter Amount</h5>
+                </legend>
+                <input type="text" placeholder="100">
+            </fieldset>
+            <div class="mainCountryOptions">
+                <div class="countryOptions">
+                    <select name="from" id="fromOptions">
+                        <option value="PAK">PAK</option>
+                        <option value="IND">IND</option>
+                        <option value="USD" selected>USD</option>
+                        <option value="UAE">UAE</option>
+                        <option value="AUS">AUS</option>
+                        <option value="QTR">QTR</option>
+                        <option value="RYL">RYL</option>
+                        <option value="KRN">KRN</option>
+                        <option value="EUR">EUR</option>
+                        <option value="AUD">AUD</option>
+                    </select>
+                </div>
+                <div class="conversionImage">
+                    <img src="./arrow-redo-circle-outline.svg" alt="">
+                </div>
+                <div class="countryOptions">
+                    <select name="to" id="toOptions">
+                        <option value="PAK">PAK</option>
+                        <option value="IND">IND</option>
+                        <option value="USD">USD</option>
+                        <option value="UAE">UAE</option>
+                        <option value="AUS">AUS</option>
+                        <option value="QTR">QTR</option>
+                        <option value="RYL">RYL</option>
+                        <option value="KRN">KRN</option>
+                        <option value="EUR">EUR</option>
+                        <option value="AUD">AUD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="lastInnerContainer">
+                <p class="msg">
+                    1USD = 256PAK
+                </p>
+                <button>Get Exchange Rate</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
