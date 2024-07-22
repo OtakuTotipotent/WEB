@@ -1,0 +1,185 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'poppins';
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        min-height: 100%;
+    }
+
+    .panel {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .panel .text {
+        background-color: #eeeee7;
+        color: #323230;
+        padding: 30px 60px;
+    }
+
+    /* welcome panel */
+    .panel.welcome {
+        background-color: #323230;
+        padding: 30px 60px;
+        grid-auto-rows: 1fr;
+    }
+
+    .panel.welcome nav {
+        text-align: center;
+    }
+
+    .panel.welcome nav a {
+        text-decoration: none;
+        color: #a8a8a8;
+        margin-right: 30px;
+        font-size: 1.2em;
+    }
+
+    .panel.welcome nav a:hover {
+        color: greenyellow;
+    }
+
+    .panel.welcome h1 {
+        color: #eeeee7;
+        font-size: 3em;
+    }
+
+    .panel.welcome div p {
+        color: #a8a8a8;
+        line-height: 2em;
+    }
+
+    .panel.welcome footer {
+        color: green;
+        align-self: end;
+        text-align: center;
+    }
+
+    .panel.welcome footer:hover {
+        color: greenyellow;
+    }
+
+    /* about panel */
+    .panel.about {
+        grid-template-rows: 3fr 1fr;
+        overflow: hidden;
+    }
+
+    .panel.about img,
+    .panel.photos img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    /* photos panel */
+    .panel.photos {
+        grid-template-rows: 1fr 3fr;
+        overflow: hidden;
+    }
+
+    /* media queries & responsiveness */
+    @media screen and (max-width: 1400px) {
+        main {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .panel.photos {
+            grid-column: span 2;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    @media screen and (max-width:960px) {
+        main {
+            grid-template-columns: 100%;
+            grid-template-rows: 500px 400px 400px;
+        }
+
+        .panel.about {
+            grid-row: 2;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .panel img {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width:680px) {
+        main {
+            grid-template-rows: 700px 600px 600px;
+        }
+
+        .panel.about,
+        .panel.photos {
+            grid-template-columns: 1fr;
+            grid-column: span 1;
+            grid-template-rows: 1fr 1fr;
+            border-bottom: 1px solid #dcdcd0;
+        }
+
+        .panel.about img,
+        .panel.photos img {
+            height: 100%;
+        }
+    }
+</style>
+
+<body>
+    <main>
+        <div class="panel welcome">
+            <nav>
+                <a href="">Home</a>
+                <a href="">Gallery</a>
+                <a href="">Contacts</a>
+            </nav>
+            <div>
+                <h1>Moony</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi blanditiis officiis minima
+                    nobis aliquid, veniam et tempora dolorum officia libero, natus iste modi unde magni optio iure?
+                    Mollitia, architecto accusamus alias ex esse doloribus amet maiores sed iste corrupti autem, eius
+                    accusantium quo commodi maxime ipsum incidunt animi! Sit!</p>
+            </div>
+            <footer>
+                <p>All rights reserved. Copyright 2024 @ Portfolio</p>
+            </footer>
+        </div>
+        <div class="panel about">
+            <img src="img/P_1.png" alt="P_1.png">
+            <div class="text">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius adipisci nam impedit. Culpa saepe,
+                    iste numquam id vitae dicta nam!m itaque.</p>
+            </div>
+        </div>
+        <div class="panel photos">
+            <div class="text">
+                <h2>Photography</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ratione aut pariatur. Eum nisi
+                    recusandae pariatur doloribus sapiente, illum omnis!</p>
+            </div>
+            <img src="img/P_2.png" alt="P_2.png">
+        </div>
+    </main>
+
+</body>
+
+</html>
