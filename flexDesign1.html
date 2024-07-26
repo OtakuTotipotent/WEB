@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only Flex</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'poppins';
+        font-size: 1.4rem;
+        color: white;
+        background-color: #444;
+    }
+
+    .container {
+        padding: 4px;
+    }
+
+    .upper-container,
+    .middle-container,
+    .lower-container {
+        display: flex;
+    }
+
+    .child-upper,
+    .child-middle,
+    .child-lower {
+        background-color: chocolate;
+        width: 100%;
+        margin: 4px;
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    .child-upper {
+        height: 200px;
+    }
+
+    .uppers-child-first-row,
+    .uppers-child-second-row,
+    .uppers-child-third-row {
+        display: flex;
+    }
+
+    .inner-most-child {
+        background-color: #fff;
+        color: chocolate;
+        width: 100%;
+        margin: 4px;
+        border-radius: 4px;
+        padding: 4px;
+    }
+
+    @media screen and (max-width:600px) {
+        .upper-container {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="upper-container"> <!-- here starts the inner most children -->
+            <div class="child-upper">1
+                <div class="uppers-child-first-row">
+                    <div class="inner-most-child">1</div>
+                    <div class="inner-most-child">2</div>
+                    <div class="inner-most-child">3</div>
+                </div>
+                <div class="uppers-child-second-row">
+                    <div class="inner-most-child">1</div>
+                    <div class="inner-most-child">2</div>
+                    <div class="inner-most-child">3</div>
+                    <div class="inner-most-child">4</div>
+                </div>
+                <div class="uppers-child-third-row">
+                    <div class="inner-most-child">1</div>
+                    <div class="inner-most-child">2</div>
+                    <div class="inner-most-child">3</div>
+                    <div class="inner-most-child">4</div>
+                    <div class="inner-most-child">5</div>
+                </div>
+            </div> <!-- here ends the inner most children -->
+            <div class="child-upper">2</div>
+            <div class="child-upper">3</div>
+        </div>
+        <div class="middle-container">
+            <div class="child-middle">1</div>
+            <div class="child-middle">2</div>
+            <div class="child-middle">3</div>
+            <div class="child-middle">4</div>
+        </div>
+        <div class="lower-container">
+            <div class="child-lower">1</div>
+            <div class="child-lower">2</div>
+            <div class="child-lower">3</div>
+            <div class="child-lower">4</div>
+            <div class="child-lower">5</div>
+        </div>
+    </div>
+</body>
+
+</html>
