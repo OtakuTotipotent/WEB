@@ -1,0 +1,200 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Reminder</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #2f2f2f;
+        color: #fff;
+        font-family: 'verdana';
+        font-size: 1rem;
+        letter-spacing: 0.05rem;
+    }
+
+    /* Header & Navigation Styling */
+
+    header ul {
+        display: flex;
+        background-color: aqua;
+        list-style: none;
+
+    }
+
+    header {
+        position: sticky;
+        top: 0px;
+    }
+
+    header a {
+        display: block;
+        height: 45px;
+        padding: 12px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 700;
+        font-family: 'poppins';
+        transition: 0.3s ease-in-out;
+    }
+
+    header li:hover {
+        background-color: purple;
+    }
+
+    header a:hover {
+        color: #fff;
+        transform: translateY(-8px);
+    }
+
+    #signUp-nav-item {
+        margin-left: auto;
+        background-color: purple;
+    }
+
+    #signUp-nav-item a {
+        color: #fff;
+    }
+
+    /* Main Body Data styling: Container & other Divs in body */
+
+    main {
+        max-width: 960px;
+        margin: auto;
+        background-color: #333;
+        padding-top: 4rem;
+        height: 93vh;
+        font-family: 'ABeeZee';
+    }
+
+    main .input-data {
+        display: grid;
+        grid-template-columns: 9fr 1fr;
+        gap: 12px;
+        padding: 0px 4rem;
+    }
+
+    main .input-data input {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: 'ABeeZee';
+        padding: 6px 1rem;
+        color: purple;
+        outline: 2px solid aqua;
+        border-radius: 2px;
+        border: none;
+    }
+
+    main .input-data button {
+        font-size: 1rem;
+        font-weight: 1000;
+        font-family: 'ABeeZee';
+        background-color: aqua;
+        letter-spacing: 1px;
+        color: #333;
+        border: none;
+        border-radius: 3px;
+    }
+
+    main .input-data button:hover {
+        cursor: pointer;
+        background-color: purple;
+        color: #fff;
+    }
+
+    main .courses-list {
+        background-color: #2f2f2f;
+        margin-top: 18px;
+    }
+
+    main li {
+        padding: 8px 4rem;
+        list-style: decimal inside;
+        color: aqua;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Offers</a></li>
+                <li id="signUp-nav-item"><a href="#">Sign up/Sign in</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="input-data">
+                <input id="user-input-box" type="text" placeholder="Enter course name here to add in list">
+                <button id="submit-btn" type="submit">Add</button>
+            </div>
+            <div class="courses-list">
+                <ul>
+                    <li>
+                        <h4>Biology</h4>
+                    </li>
+                    <li>
+                        <h4>Computer</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script>
+    const addButton = document.querySelector('#submit-btn');
+    const inputBox = document.querySelector('#user-input-box');
+    const previousCourses = document.querySelector('.courses-list');
+    addButton.addEventListener('click', (e) => {
+        addItemInList(inputBox.value);
+    });
+    inputBox.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addItemInList(inputBox.value);
+        }
+    });
+
+    // user defined method: common for multiple events, same fun
+    function addItemInList(userInput) {
+        if (userInput.trim() === '')
+            alert("error:\nPlease enter valid course name!")
+        else {
+            const list = previousCourses.getElementsByTagName('li');
+            let itemPresence = false;
+            let i = 0;
+            while (i < list.length) {
+                if (userInput === list[i].textContent) {
+                    itemPresence = true; // it means course already exists
+                    break;
+                }
+                i++;
+            }
+            if (!itemPresence) {
+                const newItem = document.createElement('li');
+                newItem.textContent = userInput;
+                previousCourses.appendChild(newItem);
+                inputBox.value = '';
+            }
+            else {
+                alert(`error: \nThe Course already exists in the list at index ${i + 1}`)
+            }
+        }
+    }
+</script>
+
+</html>
