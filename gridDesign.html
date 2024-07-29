@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Design</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #333;
+        color: #fff;
+        font-size: 1.2rem;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+        margin: 5px;
+    }
+
+    .container {
+        display: grid;
+        row-gap: 6px;
+    }
+
+    .boxes {
+        background-color: #9999;
+        border-radius: 6px;
+        padding: 16px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="boxes">1</div>
+    </div>
+    <div class="container">
+        <div class="boxes">2</div>
+        <div class="boxes">3</div>
+    </div>
+    <div class="container">
+        <div class="boxes">4</div>
+        <div class="boxes">5</div>
+        <div class="boxes">6</div>
+    </div>
+    <div class="container">
+        <div class="boxes">7</div>
+        <div class="boxes">8</div>
+        <div class="boxes">9</div>
+        <div class="boxes">10</div>
+    </div>
+    <div class="container">
+        <div class="boxes">11</div>
+        <div class="boxes">12</div>
+        <div class="boxes">13</div>
+        <div class="boxes">14</div>
+        <div class="boxes">15</div>
+        <div class="boxes">16</div>
+    </div>
+    <div class="container">
+        <div class="boxes">17</div>
+        <div class="boxes">18</div>
+        <div class="boxes">19</div>
+        <div class="boxes">20</div>
+        <div class="boxes">21</div>
+        <div class="boxes">22</div>
+        <div class="boxes">23</div>
+        <div class="boxes">24</div>
+        <div class="boxes">25</div>
+        <div class="boxes">26</div>
+        <div class="boxes">27</div>
+        <div class="boxes">28</div>
+    </div>
+</body>
+
+</html>
