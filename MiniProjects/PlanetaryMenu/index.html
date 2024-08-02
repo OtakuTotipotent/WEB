@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Button</title>
+</head>
+<style>
+    /* Global styling */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(to right, #e55d87, #5fc3e4);
+        width: 100vw;
+        height: 100vh;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Menu Styling */
+</style>
+
+<body>
+    <div class="menu-group">
+        <div class="menu-button">
+            <img src="../RevolvingMenu_icons/add-outline.svg" alt="add-outline">
+        </div>
+
+        <li class="menu-icons" style="--i:0"><a href="#"><img src="../RevolvingMenu_icons/home-outline.svg"
+                    alt="home-outline"></a></li>
+
+        <li class="menu-icons" style="--i:1"><a href="#"><img src="../RevolvingMenu_icons/person-outline.svg"
+                    alt="person-outline"></a></li>
+
+        <li class="menu-icons" style="--i:2"><a href="#"><img src="../RevolvingMenu_icons/settings-outline.svg"
+                    alt="settings-outline"></a></li>
+
+        <li class="menu-icons" style="--i:3"><a href="#"><img src="../RevolvingMenu_icons/mail-outline.svg"
+                    alt="mail-outline"></a></li>
+
+        <li class="menu-icons" style="--i:4"><a href="#"><img src="../RevolvingMenu_icons/key-outline.svg"
+                    alt="key-outline"></a></li>
+
+        <li class="menu-icons" style="--i:5"><a href="#"><img src="../RevolvingMenu_icons/videocam-outline.svg"
+                    alt="videocam-outline"></a></li>
+
+        <li class="menu-icons" style="--i:6"><a href="#"><img src="../RevolvingMenu_icons/game-controller-outline.svg"
+                    alt="game-controller-outline"></a></li>
+
+        <li class="menu-icons" style="--i:7"><a href="#"><img src="../RevolvingMenu_icons/camera-outline.svg"
+                    alt="camera-outline"></a></li>
+
+    </div>
+</body>
+<script>
+    const menuButton = document.querySelector('.menu-button');
+    const menuGroup = document.querySelector('.menu-group');
+    const listItems = document.querySelectorAll('.menu-group li');
+</script>
+
+</html>
