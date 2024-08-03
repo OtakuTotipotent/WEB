@@ -27,3 +27,8 @@
 - ABeeZee
 - poppins
 - Karla
+
+## Favorite Colors
+
+- #1e1f25
+- #333
