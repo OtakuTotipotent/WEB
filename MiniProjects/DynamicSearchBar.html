@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+</head>
+<style>
+    *,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #1e1f25;
+    }
+
+    .container {
+        width: 80vw;
+        height: 20vh;
+        margin: auto;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    #search-field {
+        font-family: ABeeZee;
+        letter-spacing: 1px;
+        font-size: 1.3em;
+        padding: 4px 8px;
+        width: 40%;
+        background-color: grey;
+        border: none;
+        border-radius: 3px;
+        transition: all 1s;
+        line-height: 1.7;
+        color: #fff;
+    }
+
+    #search-field:focus {
+        outline-color: blue;
+        width: 100%;
+    }
+
+    #search-field::placeholder {
+        color: purple;
+        transition: all 0.6s;
+    }
+
+    #search-field:focus::placeholder {
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <input type="search" name="searchBar" id="search-field"
+            placeholder="Search... Mr MAH is an amazing & brilliant guy!">
+    </div>
+
+</body>
+
+</html>

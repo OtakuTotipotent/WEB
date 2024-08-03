@@ -1,0 +1,75 @@
+<!-- Gradient Button -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Button</title>
+</head>
+<style>
+    *,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --button-font: karla;
+        --body-bg: #1e1f25;
+        --button-bg: #000;
+        --button-color: #cbcbcb;
+        --button-hover-color: #fff;
+        --initial-border-color: #19e927;
+        --middle-border-color: #5b37f8;
+        --ending-border-color: #ff0000;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--body-bg);
+    }
+
+    .btn-box {
+        background: linear-gradient(115deg, var(--initial-border-color), var(--middle-border-color), var(--ending-border-color));
+        transition: all 0.7s ease-in-out;
+    }
+
+    .btn-box:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background: linear-gradient(115deg, var(--ending-border-color), var(--middle-border-color), var(--initial-border-color));
+    }
+
+    .button {
+        margin: 2px;
+        border: none;
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+        letter-spacing: 2px;
+        word-spacing: 0.4rem;
+        color: var(--button-color);
+        font-family: var(--button-font);
+        background: var(--button-bg);
+    }
+
+    .button:hover {
+        cursor: pointer;
+        color: var(--button-hover-color);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="btn-box">
+            <button type="button" class="button">Start Coding!</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

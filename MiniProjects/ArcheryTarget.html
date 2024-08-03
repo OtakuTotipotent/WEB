@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archery Game board</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #444;
+    }
+
+    .containers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .container-1 {
+        height: 40vh;
+        width: 40vw;
+        background-color: black;
+    }
+
+    .container-2 {
+        height: 30vh;
+        width: 30vw;
+        background-color: blue;
+    }
+
+    .container-3 {
+        height: 20vh;
+        width: 20vw;
+        background-color: red;
+    }
+
+    .container-4 {
+        height: 10vh;
+        width: 10vw;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <div class="containers container-1">
+        <div class="containers container-2">
+            <div class="containers container-3">
+                <div class="containers container-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

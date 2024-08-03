@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Pen Tile</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(45deg, #194f7e, #1e1f25, #580c0c);
+        font-family: karla;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .container {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        height: 95%;
+        width: 50%;
+        backdrop-filter: blur(200px);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 8px;
+    }
+
+    .card:hover .card-stats {
+        display: flex;
+    }
+
+    .card-thumbnail {
+        width: 100%;
+        height: 70%;
+    }
+
+    .card-thumbnail>img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+
+    .card-body {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 12px;
+    }
+
+    .card-avatar {
+        height: 100%;
+    }
+
+    .card-avatar img {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 14px;
+    }
+
+    .logo-details h3 {
+        color: #fff;
+    }
+
+    .logo-details p {
+        color: gray;
+    }
+
+    .card-stats {
+        list-style: none;
+        display: none;
+        gap: 1.5rem;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-thumbnail">
+                <img src="../WEB-CodingShuttle/img/ExampleSectionImages/a robot and a man.jpg" alt="robotics">
+            </div> <!-- 1st section  -->
+            <div class="card-body">
+                <div class="card-avatar">
+                    <img src="../WEB-CodingShuttle/img/ExampleSectionImages/an ai skull image.jpg" alt="user-logo">
+                </div>
+                <div class="logo-details">
+                    <h3>Abstract Gradient Project</h3>
+                    <p>Scrimsbee McScrimslee</p>
+                </div>
+            </div> <!-- 2nd section  -->
+            <ul class="card-stats">
+                <li>💖 8</li>
+                <li>💬 32</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

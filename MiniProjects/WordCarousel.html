@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Carousel</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        background-color: #d4cdcd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-family: poppins;
+    }
+
+    h3::after {
+        content: "";
+        animation: texting infinite 5s;
+        padding: 12px;
+        background-color: blue;
+        border-radius: 8px;
+        color: #fff;
+        font-family: 'ABeeZee';
+        letter-spacing: 2px;
+    }
+
+    @keyframes texting {
+        0% {
+            content: " Cats";
+        }
+
+        25% {
+            content: " Books";
+        }
+
+        50% {
+            content: " Coding";
+        }
+
+        75% {
+            content: " Serials";
+        }
+
+        100% {
+            content: " Cats";
+        }
+    }
+</style>
+
+<body>
+    <h3>
+        I Love
+    </h3>
+</body>
+
+</html>

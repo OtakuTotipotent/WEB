@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Squares</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #344244;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .squares {
+        width: 2rem;
+        height: 2rem;
+        background-color: #fff;
+        margin: 0.5rem;
+        animation-name: rotation;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-duration: 2s;
+    }
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(720deg);
+        }
+    }
+
+    #s-1 {
+        background-color: #fa568f;
+    }
+
+    #s-2 {
+        background-color: #3b0285;
+    }
+
+    #s-3 {
+        background-color: #c9d300;
+    }
+</style>
+
+<body>
+    <div class="squares" id="s-1"></div>
+    <div class="squares" id="s-2"></div>
+    <div class="squares" id="s-3"></div>
+</body>
+
+</html>

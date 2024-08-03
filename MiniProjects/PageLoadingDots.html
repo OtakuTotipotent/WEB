@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animations</title>
+</head>
+
+<style>
+    *,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #1e1f25;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #fff;
+        margin: 8px;
+        animation: pulse infinite alternate 1s;
+    }
+
+    @keyframes pulse {
+        from {
+            background-color: #fff;
+        }
+
+        to {
+            background-color: #454545;
+            height: 2.2rem;
+            width: 2.2rem;
+        }
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+</body>
+
+</html>
