@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .toggle-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #6f7683;
+    }
+
+    label {
+        width: 100px;
+        height: 40px;
+        border-radius: 50px;
+        padding: 0.2rem;
+        background-color: #fff;
+    }
+
+    label:hover {
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+    }
+
+    .toggle-switch {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 1s;
+        background-color: #6f7683;
+    }
+
+    input:checked~.toggle-switch {
+        transform: translateX(60px);
+        background-color: black;
+    }
+</style>
+
+<body>
+    <div class="toggle-container">
+        <label for="toggle">
+            <input type="checkbox" id="toggle">
+            <div class="toggle-switch"></div>
+        </label>
+    </div>
+
+</body>
+
+</html>
