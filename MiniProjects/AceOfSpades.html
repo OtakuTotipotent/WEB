@@ -42,11 +42,6 @@
         padding: var(--inside-padding);
         font-size: var(--smaller-content);
         font-family: karla;
-    }
-
-    /* Black Spade Card Styling */
-    .black-card {
-        color: black;
         display: grid;
         grid-template-columns: 20% 60% 20%;
     }
@@ -55,8 +50,13 @@
         text-align: center;
     }
 
-    .black-card .aside-content:nth-child(3) {
+    .card-right-side {
         transform: rotate(180deg);
+    }
+
+    /* Black Spade Card Styling */
+    .black-card {
+        color: black;
     }
 
     .black-card .center-content {
@@ -70,30 +70,49 @@
     .red-card {
         color: red;
     }
+
+    .red-card .center-content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        text-align: center;
+        font-size: var(--bigger-content);
+        padding: 2rem 0;
+    }
+
+    .red-card .center-content .symbol:nth-child(3),
+    .red-card .center-content .symbol:nth-child(4) {
+        transform: rotate(180deg);
+    }
 </style>
 
 <body>
     <div class="cards black-card">
-        <div class="aside-content">
+        <div class="aside-content card-left-side">
             <div class="txt">A</div>
             <div class="symbol">♠️</div>
         </div>
         <div class="center-content">♠️</div>
-        <div class="aside-content">
+        <div class="aside-content card-right-side">
             <div class="txt">A</div>
             <div class="symbol">♠️</div>
         </div>
     </div>
     <!-- red spade card -->
     <div class="cards red-card">
-        <div class="aside-content">
-            <div class="txt">A</div>
-            <div class="symbol">♠️</div>
+        <div class="aside-content card-left-side">
+            <div class="txt">4</div>
+            <div class="symbol">&hearts;</div>
         </div>
-        <div class="center-content">♠️</div>
-        <div class="aside-content">
-            <div class="txt">A</div>
-            <div class="symbol">♠️</div>
+        <div class="center-content">
+            <div class="symbol">&hearts;</div>
+            <div class="symbol">&hearts;</div>
+            <div class="symbol">&hearts;</div>
+            <div class="symbol">&hearts;</div>
+        </div>
+        <div class="aside-content card-right-side">
+            <div class="txt">4</div>
+            <div class="symbol">&hearts;</div>
         </div>
     </div>
 
