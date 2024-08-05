@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --inside-padding: 6px;
+        --card-border: 5px;
+        --card-bg: #fff;
+        --border-radius: 6px;
+        --card-height: 300px;
+        --cards-gap: 4rem;
+        --bigger-content: 4rem;
+        --smaller-content: 2rem;
+    }
+
+    body {
+        background-color: #6f7683;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--cards-gap);
+    }
+
+    .cards {
+        height: var(--card-height);
+        width: calc(var(--card-height) * 2/3);
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: var(--inside-padding);
+        font-size: var(--smaller-content);
+        font-family: karla;
+    }
+
+    /* Black Spade Card Styling */
+    .black-card {
+        color: black;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+    }
+
+    .aside-content {
+        text-align: center;
+    }
+
+    .black-card .aside-content:nth-child(3) {
+        transform: rotate(180deg);
+    }
+
+    .black-card .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--bigger-content);
+    }
+
+    /* Red Spade Card Styling */
+    .red-card {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="cards black-card">
+        <div class="aside-content">
+            <div class="txt">A</div>
+            <div class="symbol">♠️</div>
+        </div>
+        <div class="center-content">♠️</div>
+        <div class="aside-content">
+            <div class="txt">A</div>
+            <div class="symbol">♠️</div>
+        </div>
+    </div>
+    <!-- red spade card -->
+    <div class="cards red-card">
+        <div class="aside-content">
+            <div class="txt">A</div>
+            <div class="symbol">♠️</div>
+        </div>
+        <div class="center-content">♠️</div>
+        <div class="aside-content">
+            <div class="txt">A</div>
+            <div class="symbol">♠️</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
