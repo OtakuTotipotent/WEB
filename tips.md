@@ -27,11 +27,12 @@
 - ABeeZee
 - poppins
 - Karla
+- Arizona
 
 ## Favorite Colors
 
 - #1e1f25
 - #333
 - #282c34
-- 6f7683
--#202124
+- #6f7683
+- #202124
