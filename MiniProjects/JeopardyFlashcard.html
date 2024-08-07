@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy Flashcard</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+    }
+    
+    .card {
+        width: 70%;
+        height: 45%;
+        padding: 2rem;
+        border-radius: 16px;
+        font-family: 'ABeeZee';
+        background-color: #303094;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+    }
+
+    .card-back {
+        display: none;
+    }
+
+    .card-back,
+    .card-front {
+        backface-visibility: hidden;
+    }
+
+    .card:hover {
+        transform: rotateY(180deg);
+    }
+
+    .card:hover .card-front {
+        display: none;
+    }
+
+    .card:hover .card-back {
+        display: block;
+        transform: rotateY(180deg);
+    }
+</style>
+
+<body>
+    <div class="card">
+        <div class="card-front">
+            <h1>
+                Marquee is an HTML tag that has been deprecated since long, was very popular in early days of
+                internet.It magically makes text scroll across the screen.
+            </h1>
+        </div>
+        <div class="card-back">
+            <h1>What is Marquee tag</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
