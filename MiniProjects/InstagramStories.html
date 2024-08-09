@@ -6,99 +6,87 @@
     <title>Instagram Stories</title>
 </head>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     body {
         background-color: #000;
-        font-family: karla;
         color: #fff;
-        height: 100vh;
+        font-family: karla;
     }
 
-    p {
-        letter-spacing: 0.3px;
-    }
-
-    /* Target Styling */
-    .stories-container {
+    .stories-menu {
+        max-width: 320px;
+        margin: 2em auto;
+        padding-left: 0;
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 2rem;
+        justify-content: space-evenly;
         list-style: none;
     }
 
-    .stories {
-        width: 120px;
-        height: 170px;
+    .story {
         display: flex;
-        align-items: center;
         flex-direction: column;
-        row-gap: 1rem;
-        margin-top: 1rem;
-        overflow: hidden;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        ;
     }
 
     .img-wrapper {
-        width: 100%;
+        width: 60px;
+        height: 60px;
+        padding: 4px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
     }
 
-    .img-wrapper img {
+    .img {
         width: 100%;
         border-radius: 50%;
-        border: 4px solid black;
+        border: 2px solid #000;
     }
 
-    /* User made classes */
-    .new {}
-
-    .live {}
-
-    .viewed {}
-
-    .stories.new .img-wrapper {
-        padding: 3px;
-        background: linear-gradient(45deg, gold, purple);
+    .new>.img-wrapper {
+        background: linear-gradient(to top right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
     }
 
-    .stories.viewed .img-wrapper {
-        padding: 3px;
-        background-color: #6c6666;
+    .viewed>.img-wrapper {
+        background-color: gray;
     }
 
-    .stories.live .img-wrapper{
+    .live::after {
+        content: "Live";
+        padding: 1px 5px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-radius: 4px;
         background-color: red;
+        position: absolute;
+        top: 50%;
+        border: 2px solid #000;
     }
 </style>
 
 <body>
-    <header>
-        <ul class="stories-container">
-            <li class="stories new">
-                <div class="img-wrapper"><img class="img"
-                        src="../WEB-CodingShuttle/img/BingFeatureImages/BookishPlanetary.jpg" alt="story-img"></div>
-                <p>Muhammad</p>
-            </li>
-            <li class="stories live viewed">
-                <div class="img-wrapper"><img class="img"
-                        src="../WEB-CodingShuttle/img/BingFeatureImages/HeartOntheHand.jpg" alt="story-img"></div>
-                <p>Afnan</p>
-            </li>
-            <li class="stories new">
-                <div class="img-wrapper"><img class="img"
-                        src="../WEB-CodingShuttle/img/BingFeatureImages/HeartintheBottle.jpg" alt="story-img"></div>
-                <p>Shabbir</p>
-            </li>
-        </ul>
-    </header>
+    <ul class="stories-menu">
+        <li class="story new">
+            <div class="img-wrapper"><img class="img"
+                    src="../WEB-CodingShuttle/img/BingFeatureImages/BookishPlanetary.jpg" alt="profile-pic"></div>
+            <p>Muhammad</p>
+        </li>
+        <li class="story live viewed">
+            <div class="img-wrapper"><img class="img"
+                    src="../WEB-CodingShuttle/img/BingFeatureImages/HeartOntheHand.jpg" alt="profile-pic"></div>
+            <p>Afnan</p>
+        </li>
+        <li class="story new">
+            <div class="img-wrapper"><img class="img"
+                    src="../WEB-CodingShuttle/img/BingFeatureImages/HeartintheBottle.jpg" alt="profile-pic"></div>
+            <p>Shabbir</p>
+        </li>
+    </ul>
 
 </body>
 
