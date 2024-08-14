@@ -28,6 +28,10 @@
 - poppins
 - Karla
 - Arizona
+- cera-round-pro
+- Helvetica
+- Neue
+- Helvetica
 
 ## Favorite Colors
 
