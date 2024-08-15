@@ -41,6 +41,9 @@
         card.className = "pattern";
         card.innerText = "Hello, there";
         document.body.appendChild(card);
+        card.addEventListener('click', function () {
+            card.style.backgroundColor = Math.random() * 0xffffff;
+        });
     </script>
 </body>
 
