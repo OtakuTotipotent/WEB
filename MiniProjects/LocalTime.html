@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Time</title>
+</head>
+<style>
+    .centre {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #banner {
+        font-size: 32px;
+        font-family: Impact, sans-serif;
+        margin-bottom: 32px;
+    }
+
+    #clock {
+        font-size: 40px;
+        background-color: purple;
+        padding: 30px 70px;
+        margin-top: 10px;
+        border-radius: 12px;
+        color: white;
+
+    }
+
+    #clock:hover {
+        cursor: progress;
+        border-radius: 50%;
+        background-color: orangered;
+
+    }
+</style>
+
+<body>
+    <div class="centre">
+        <div id="banner">Your Local Time</div>
+        <div id="clock"></div>
+    </div>
+
+</body>
+<script>
+    const clock = document.querySelector('#clock');
+    setInterval(() => { // it will be running every second till the web app is running
+        let time = new Date();
+        clock.innerHTML = time.toLocaleTimeString();
+    }, 1000);
+</script>
+
+</html>

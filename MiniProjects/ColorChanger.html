@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        color: yellow;
+        min-height: 100vh;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .mainDiv {
+        width: 80%;
+        margin: auto;
+        margin-top: 12rem;
+        background-color: #3a3a34;
+        padding: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .Boxes {
+        background-color: black;
+        display: inline-block;
+        width: 21%;
+        height: 85px;
+        padding: 19px;
+        text-align: center;
+        color: black;
+        margin: 7px;
+        line-height: 85px;
+    }
+
+    #white {
+        background-color: white;
+    }
+
+    #grey {
+        background-color: grey;
+    }
+
+    #purple {
+        background-color: purple;
+    }
+
+    #green {
+        background-color: green;
+    }
+</style>
+
+<body>
+    <h1>Press any Box to switch colors</h1>
+    <div class="mainDiv">
+        <span class="Boxes" id="white">WHITE</span>
+        <span class="Boxes" id="grey">GREY</span>
+        <span class="Boxes" id="purple">PURPLE</span>
+        <span class="Boxes" id="green">GREEN</span>
+    </div>
+
+</body>
+<script>
+    // targeting the elements
+    const body = document.querySelector('body');
+    const boxes = document.querySelectorAll('.Boxes');
+    // testing the Actions
+    boxes.forEach((box) => {
+        box.addEventListener('click', (e) => {
+            if (e.target.id === 'white') {
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'black';
+            }
+            else if (e.target.id === 'grey') {
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'white';
+            }
+            else if (e.target.id === 'purple') {
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'white';
+            }
+            else if (e.target.id === 'green') {
+                body.style.backgroundColor = e.target.id;
+            }
+        });
+        box.addEventListener('mouseover', (e) => {
+            if (e.target.id === 'white') {
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'black';
+            }
+            else if (e.target.id === 'grey') {
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'white';
+            }
+            else if (e.target.id === 'purple') {
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'white';
+            }
+            else if (e.target.id === 'green') {
+                body.style.backgroundColor = e.target.id;
+            }
+        });
+    });
+    //
+</script>
+
+</html>

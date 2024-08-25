@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B M I</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            font-size: 1.25rem;
+            width: 70%;
+            margin: auto;
+            margin-top: 10rem;
+        }
+
+        input {
+            border: none;
+            padding: 7px;
+            font-size: 1.1rem;
+            border-radius: 22%;
+            outline: none;
+            text-align: center;
+        }
+
+        input:focus {
+            background-color: blanchedalmond;
+        }
+
+        button {
+            color: white;
+            background-color: purple;
+            padding: 7px;
+            width: 63%;
+            margin: auto;
+            margin-top: 22px;
+            border: none;
+            border-radius: 30%;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        button:hover {
+            background-color: #651365;
+            cursor: pointer;
+        }
+
+        #results {
+            margin-top: 12px;
+            padding: 7px;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Body Mass Index</h1>
+    <form>
+        <p>
+            <label>Height in CM :</label>
+            <input type="number" id="height">
+        </p>
+        <p>
+            <label>Weight in KG : </label>
+            <input type="number" id="weight">
+        </p>
+        <button>Calculate</button>
+        <div id="results"></div>
+    </form>
+
+</body>
+<script>
+    // Javascript is written here
+    //#region 
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const height = parseInt(document.getElementById('height').value);
+        const weight = parseInt(document.getElementById('weight').value);
+        const results = document.querySelector('#results');
+        if (height === 0 || height < 0 || isNaN(height)) {
+            alert("error : Please enter valid Height");
+        }
+        else if (weight === 0 || weight < 0 || isNaN(weight)) {
+            alert("error : Please enter valid Width");
+        }
+        else {
+            const bmi = (weight / ((height * height) / 10000)).toFixed(2); // formula
+            results.innerHTML = `<span> ${bmi} </span>`; // value
+            const bmi_text = document.createElement('h4'); // text-creation
+            if (bmi < 18.6) { // text-Assignment
+                bmi_text.innerText = 'Under Weight';
+            }
+            else if (bmi > 18.5 && bmi < 24.9) {
+                bmi_text.innerText = 'Normal Weight';
+            }
+            else {
+                bmi_text.innerText = 'Over Weight';
+            }
+            document.querySelector('#results').appendChild(bmi_text); // text-insertion
+        }
+    });
+    //#endregion
+</script>
+
+</html>

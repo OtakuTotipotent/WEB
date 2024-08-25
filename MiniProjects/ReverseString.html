@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Demo</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        flex-direction: column;
+    }
+
+    form input {
+        text-align: center;
+        padding: 6px;
+        font-size: 1.6rem;
+        font-family: poppins;
+        font-weight: 700;
+        margin: 6px;
+    }
+
+    #reverseOutput {
+        pointer-events: none;
+        background-color: #e9ecef;
+    }
+
+    #submit {
+        margin: 16px;
+        padding: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <form action="" class="flex">
+        <input type="text" name="" id="userInput" value="Enter Your Text">
+        <input type="text" name="" id="reverseOutput">
+        <input type="submit" name="" id="submit">
+    </form>
+
+</body>
+
+<script>
+    const userInput = document.querySelector('#userInput');
+    const output = document.querySelector('#reverseOutput');
+    const submit = document.querySelector('#submit');
+    submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        const originalText = userInput.value;
+        output.value = originalText.split('').reverse().join('');
+    });
+</script>
+
+</html>

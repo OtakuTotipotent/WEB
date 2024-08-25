@@ -31,7 +31,7 @@
 - cera-round-pro
 - Helvetica
 - Neue
-- Helvetica
+-
 
 ## Favorite Colors
 

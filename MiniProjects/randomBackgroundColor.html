@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Flow</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background-color: #414141;
+        font-family: poppins;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 16px;
+        color: #cdb68d;
+    }
+
+    button {
+        padding: 6px 30px;
+        border: none;
+        border-radius: 8px;
+        display: block;
+        margin: auto;
+        margin-top: 32px;
+        background-color: #cdb68d;
+        font-family: poppins;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <h2>The Background Color Changer ft. Random</h2>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+
+<script>
+    const heading = document.querySelector('h2');
+    // global variables
+    let timeIntervalFunction;
+    const hex = "0123456789ABCDEF";
+    // User Defined Functions
+    // getting hex code
+    const randomHexValue = function () {
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+    // changing the background color on demand
+    const changeBgColor = function () {
+        if (!timeIntervalFunction) {
+            timeIntervalFunction = setInterval(applyColor, 1000);
+        }
+        function applyColor() {
+            document.body.style.backgroundColor = randomHexValue();
+            heading.style.color = randomHexValue(randomHexValue());
+        }
+    };
+    // pausing the background color on demand
+    const pauseBgColor = function () {
+        clearInterval(timeIntervalFunction);
+        timeIntervalFunction = null;
+    };
+    // DOM manipulations
+    document.querySelector('#start').addEventListener('click', changeBgColor);
+    document.querySelector('#stop').addEventListener('click', pauseBgColor);
+</script>
+
+</html>

@@ -59,4 +59,3 @@ let variable = 18;
 <mark>Marked Text </mark>
 
 This is a script ~LineThrough~
-

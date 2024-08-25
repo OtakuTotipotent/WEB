@@ -261,7 +261,7 @@
         else {
             let courseExistence = false;
             const previousCourseList = document.body.querySelectorAll('.course-list'); // targets the 'li'
-            for (const list of previousCourseList) { // checks if course already exists in the list
+            for (let list of previousCourseList) { // checks if course already exists in the list
                 if (list.firstChild.textContent.trim().toLowerCase() === userInput.trim().toLowerCase()) {
                     courseExistence = true;
                     break;
