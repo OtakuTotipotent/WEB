@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To - Do</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: linear-gradient(45deg, #753b75, #744b4b, #902727, #741872);
+        background-color: purple;
+        height: 100vh;
+    }
+
+    .container {
+        width: 450px;
+        height: 85vh;
+        margin: auto;
+        letter-spacing: 1px;
+        border-radius: 12px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 12px #000000;
+    }
+
+    nav {
+        padding: 10px;
+        color: #000;
+        text-shadow: 1px -1px #ecc0c7;
+        font-size: 1.6em;
+        font-weight: 1000;
+        font-family: Karla;
+        text-align: center;
+        background-color: chocolate;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .user-interface {
+        width: 85%;
+        margin: auto;
+        margin-top: 0.5rem;
+    }
+
+    #input-buttons {
+        display: flex;
+        gap: 2px;
+        position: sticky;
+        top: 0px;
+    }
+
+    #input-buttons input,
+    #input-buttons button {
+        padding: 4px;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+
+    .text-input {
+        flex-basis: 100%;
+        font-size: 1.1rem;
+        border-radius: 50px 0 0 50px;
+        color: white;
+        background: linear-gradient(45deg, #9a7901, #23aa78, #ff3c3c, #187469);
+    }
+
+    #add-button {
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 0 50px 50px 0;
+        background-color: #187469;
+    }
+
+    #add-button:hover {
+        background: linear-gradient(145deg, #9a7901, #23aa78, #ff3c3c, #187469);
+    }
+
+    .todo-list {
+        width: 85%;
+        margin: auto;
+        margin-top: 10px;
+        text-align: center;
+        max-height: 520px;
+        overflow: auto;
+        scrollbar-width: none;
+    }
+
+    .todo-list p {
+        margin: 4px;
+        padding: 4px 0;
+        color: #fff;
+        background-color: #5622fe;
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .todo-list img {
+        width: 20px;
+        cursor: pointer;
+        /* display: none; */
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav>Your TO-DO Lists</nav>
+        <div class="user-interface">
+            <div id="input-buttons">
+                <input type="text" class="text-input" placeholder="write your desired tasks & reminders here">
+                <button id="add-button">ADD</button>
+            </div>
+            <div class="todo-list">
+                <p><img src="../icon_edit_black_pencil.svg" alt="[edit]">
+                    Its okay to not be okay
+                    <img src="../icon_remove_red_circle.svg" alt="[remove]">
+                </p>
+                <p><img src="../icon_edit_black_pencil.svg" alt="[edit]">
+                    Its okay to not be okay
+                    <img src="../icon_remove_red_circle.svg" alt="[remove]">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // setting targets & creating variables
+        const textInput = document.querySelector('.text-input');
+        const addBtn = document.querySelector('#add-button');
+
+        // events handling
+        textInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter')
+                addTODOitemInList(e);
+        });
+        addBtn.addEventListener('click', (e) => {
+            addTODOitemInList(e);
+        });
+
+        // user-defined functions
+        // adding new item in the list
+        function addTODOitemInList(e) {
+            console.log(e.target);
+        }
+
+    </script>
+</body>
+
+<!-- function randomColor() {
+const hashCodes = ['#5622fe', '#233d03', '#fb11ac', '#25c446', '#0b453b', '#050113', '#de0104', '#61102f', '#6d68a8'];
+return hashCodes[Math.floor(Math.random() * 9)];
+} -->
+
+</html>
