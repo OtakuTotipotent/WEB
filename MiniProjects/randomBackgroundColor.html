@@ -21,7 +21,7 @@
     h2 {
         text-align: center;
         margin: 16px;
-        color: #cdb68d;
+        color: #000;
     }
 
     button {
@@ -31,7 +31,8 @@
         display: block;
         margin: auto;
         margin-top: 32px;
-        background-color: #cdb68d;
+        color: white;
+        background-color: #333;
         font-family: poppins;
         font-weight: 700;
         font-size: 1.2rem;
@@ -57,7 +58,7 @@
     // getting hex code
     const randomHexValue = function () {
         let color = "#";
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 8; i++) {
             color += hex[Math.floor(Math.random() * 16)];
         }
         return color;
@@ -69,7 +70,6 @@
         }
         function applyColor() {
             document.body.style.backgroundColor = randomHexValue();
-            heading.style.color = randomHexValue(randomHexValue());
         }
     };
     // pausing the background color on demand

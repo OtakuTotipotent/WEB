@@ -41,6 +41,7 @@
             background-color: #64c5f5;
             border: none;
             border-radius: 6px;
+            outline: none;
         }
 
         .pseudoInputs {
@@ -74,7 +75,7 @@
             text-transform: lowercase;
         }
 
-        .buttons:hover{
+        .buttons:hover {
             cursor: pointer;
             background-color: #64c5f5;
             text-transform: uppercase;
@@ -112,8 +113,7 @@
             <p class="pseudoInputs">Your Gender
                 <input type="radio" value="m" name="Gender"> Male
                 <input type="radio" value="f" name="Gender"> Female
-                <input type="radio" value="o" name="Gender">
-                Other
+                <input type="radio" value="o" name="Gender"> Other
             </p>
             <p class="pseudoInputs">Your Hobby(s)
                 <input type="checkbox"> Games
@@ -124,8 +124,8 @@
             <p class="pseudoInputs insertImage">Upload Your Photo :
                 <input type="file" name="Image">
             </p>
-            <input class="buttons" type="submit" value="S I G N - U P" class="endButtons">
-            <input class="buttons" type="reset" value="R E S E T" class="endButtons">
+            <input class="buttons endButtons" type="submit" value="S I G N - U P">
+            <input class="buttons endButtons" type="reset" value="R E S E T">
         </fieldset>
 
     </form>

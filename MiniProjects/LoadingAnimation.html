@@ -7,58 +7,42 @@
     <title>searchingOperation</title>
 </head>
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-color: #333;
+    }
+
     .main {
         width: 100px;
         height: 100px;
-        background-color: orangered;
-        margin: 300px auto;
         border-radius: 100%;
         position: relative;
-        animation: MoonEarth 1s;
-        animation-delay: 2s;
-        animation-iteration-count: infinite;
+        animation-iteration-count: 10;
     }
 
     .golo {
         width: 30px;
         height: 30px;
-        background-color: orangered;
         border-radius: 100%;
         position: absolute;
-        animation: MoonEarth1 1s;
-        animation-delay: 2s;
-        animation-iteration-count: infinite;
+        right: 0;
+        animation: MoonEarth1 2s linear;
+        animation-iteration-count: 10;
     }
 
     .molo {
         width: 30px;
         height: 30px;
-        background-color: orangered;
         border-radius: 100%;
         position: absolute;
-        right: 0px;
-        animation: MoonEarth2 1s;
-        animation-delay: 2s;
-        animation-iteration-count: infinite;
+        animation: MoonEarth2 2s linear;
+        animation-iteration-count: 10;
 
-    }
-
-    @keyframes MoonEarth {
-        0% {}
-
-        25% {
-            background-color: blueviolet;
-        }
-
-        50% {
-            background-color: palevioletred;
-        }
-
-        75% {
-            background-color: mediumseagreen;
-        }
-
-        100% {}
     }
 
     @keyframes MoonEarth1 {
@@ -70,19 +54,16 @@
         25% {
             top: 0px;
             left: 70px;
-            background-color: blueviolet;
         }
 
         50% {
             top: 70px;
             left: 70px;
-            background-color: palevioletred;
         }
 
         75% {
             top: 70px;
             left: 0px;
-            background-color: mediumseagreen;
         }
 
         100% {
@@ -100,19 +81,16 @@
         25% {
             top: 0px;
             right: 70px;
-            background-color: blueviolet;
         }
 
         50% {
             top: 70px;
             right: 70px;
-            background-color: palevioletred;
         }
 
         75% {
             top: 70px;
             right: 0px;
-            background-color: mediumseagreen;
         }
 
         100% {
@@ -127,6 +105,27 @@
         <div class="golo"></div>
         <div class="molo"></div>
     </div>
+    <script>
+        const earth = document.querySelector('.main');
+        const golo = document.querySelector('.golo');
+        const molo = document.querySelector('.molo');
+
+        setInterval(() => {
+            earth.style.backgroundColor = `${randomColor()}`;
+            golo.style.backgroundColor = `${randomColor()}`;
+            molo.style.backgroundColor = `${randomColor()}`;
+        }, 600);
+
+        function randomColor() {
+            const letters = '0a9cb826d134e5f7';
+            let hashCodes = '#';
+            for (let i = 0; i < 6; i++) {
+                hashCodes += letters[Math.floor(Math.random() * 16)];
+            }
+            console.log(hashCodes);
+            return hashCodes;
+        }
+    </script>
 </body>
 
 </html>

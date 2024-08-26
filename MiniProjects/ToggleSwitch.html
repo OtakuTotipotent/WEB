@@ -16,6 +16,7 @@
         align-items: center;
         justify-content: center;
         background-color: #6f7683;
+        transition: all 3s ease-in-out;
     }
 
     label {
@@ -46,6 +47,10 @@
         transform: translateX(60px);
         background-color: black;
     }
+
+    .dark-theme {
+        background-color: black;
+    }
 </style>
 
 <body>
@@ -56,6 +61,12 @@
         </label>
     </div>
 
+    <script>
+        const box = document.querySelector('#toggle');
+        box.addEventListener('click', (e) => {
+            document.querySelector('.toggle-container').classList.toggle('dark-theme');
+        })
+    </script>
 </body>
 
 </html>
