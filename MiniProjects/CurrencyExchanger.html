@@ -1,4 +1,5 @@
 <!-- :: same as currency converter :: -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +17,7 @@
     body {
         width: 100vw;
         height: 100vh;
-        background-image: linear-gradient(to top right, rgb(210, 116, 132), #1283af, slateblue);
+        background-image: linear-gradient(to top right, #d27484, #1283af, slateblue);
     }
 
     header {
@@ -25,40 +26,43 @@
     }
 
     h1 {
-        color: #000000;
+        color: #fff;
         text-align: center;
         letter-spacing: 4px;
         font-family: fantasy;
-        font-weight: 1000;
-        text-shadow: -1.5px 1.4px 2px #ffffff;
+        text-shadow: -1.5px 1.4px 2px #000;
     }
 
     hr {
         width: 80%;
+        height: 1.4vh;
         margin: auto;
-        height: 2vh;
         border: none;
-        background-color: #222;
         border-radius: 100px;
+        background-image: linear-gradient(to left, #b82f46, #4130ad);
     }
 
     main {
         width: 80%;
-        margin: auto;
-        background-color: #000;
         height: 80%;
+        padding: 1vh;
+        margin: auto;
         margin-top: 1vh;
         margin-bottom: 1vh;
-        border-radius: 6px;
-        padding: 1vh;
+        border-radius: 8px;
+        box-shadow: 0 0 6px black;
+        background-image: linear-gradient(to top right, #1283af, #8b3947);
     }
 
     form {
-        font-family: 'ABeeZee';
-        background-color: cornflowerblue;
         width: 100%;
         height: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        font-family: 'ABeeZee';
+        backdrop-filter: blur(32px);
         /* color: cornflowerblue; */
+        background: rgba(255, 255, 255, 0.2);
     }
 
     /* MEDIA QUERIES */
@@ -107,6 +111,10 @@
         <form action="#">
             <fieldset>
                 <legend>Currency Converter</legend>
+                <label for="cc-user-input">
+                    Enter your amount :
+                    <input type="number" name="" id="cc-user-input">
+                </label>
             </fieldset>
             <fieldset>
                 <legend>Currency Exchange Rates</legend>
@@ -114,7 +122,19 @@
         </form>
     </main>
     <hr>
-
 </body>
+<script>
+    let backFrame = document.querySelector('main');
+    backFrame.style.backgroundImage = 'linear-gradient(to top right, #d27484, #1283af, slateblue)'
+
+    function randomGradient() {
+        const letters = 'D023C4E591A8BF76';
+        let hashCode = '#';
+        for (let i = 0; i < 6; i++) {
+            hashCode += letters[Math.floor(Math.random() * 16)];
+        }
+        return hashCode;
+    }
+</script>
 
 </html>
