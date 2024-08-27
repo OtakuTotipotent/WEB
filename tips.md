@@ -32,6 +32,7 @@
 - Helvetica
 - Neue
 - poppins
+- Segoe UI Emoji
 
 ## Favorite Colors
 
