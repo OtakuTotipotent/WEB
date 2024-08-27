@@ -8,100 +8,122 @@
 </head>
 
 <style>
-    * {
+    body,
+    html {
         padding: 0;
         margin: 0;
+        font-family: Verdana;
         box-sizing: border-box;
     }
 
     body {
-        background-color: #363434;
-        color: white;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         display: flex;
-        justify-content: center;
+        color: white;
+        height: 100vh;
         align-items: center;
-        min-height: 100vh;
+        justify-content: center;
+        background-color: #363434;
     }
 
     .container {
-        background-color: #bf4444;
-        padding: 1.2rem;
-        border-radius: 1rem;
-        min-height: 45vh;
         width: 50vh;
+        padding: 1rem;
         transition: 1s ease;
-        box-shadow: -3px 3px 6px black;
+        border-radius: 1rem;
+        box-shadow: 0 0 8px #000;
+        background-color: #bf4444;
     }
 
     .container:hover {
-        background-color: #a73838;
         scale: 1.03;
+        background-color: #a73838;
     }
 
     .container h2 {
         color: #252424;
-    }
-
-    .container h2:hover {
-        cursor: default;
+        font-size: 1.6rem;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 8px;
     }
 
     form {
-        margin-top: 2rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     fieldset h5 {
+        color: #d9caca;
+        letter-spacing: 1px;
         font-family: sans-serif;
     }
 
     fieldset {
-        border-radius: 7px;
+        width: 90%;
+        border-radius: 6px;
+        border: 1px solid #000;
         padding: 0.2rem 1rem 0.7rem 1rem;
-        border: 1px solid #ffff;
     }
 
     fieldset input {
-        border: none;
-        outline: none;
-        border-radius: 1rem;
         width: 100%;
+        border: none;
+        padding: 4px;
+        outline: none;
         color: white;
-        padding: 5px 1px 5px 1px;
         font-size: 1.4rem;
         text-align: center;
+        border-radius: 50px;
         background-color: #252424;
     }
 
     .mainCountryOptions {
+        width: 90%;
         display: flex;
-        justify-content: space-between;
         padding: 2rem;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-evenly;
+    }
+
+    .direction {
+        font-size: 1.4rem;
     }
 
     .countryOptions {
         display: flex;
+        align-items: center;
         justify-content: center;
     }
 
-    .countryOptions option {
-        background-color: #252424;
-        color: white;
-        font-size: 1rem;
-    }
-
     .countryOptions select {
-        background-color: #252424;
-        color: white;
         border: none;
-        border-radius: 50%;
-        padding: 12px;
-        font-weight: 700;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 6px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 50px;
+        font-family: 'Lucida Sans';
+        background-color: #252424;
     }
 
-    .countryOptions select:hover {
-        cursor: pointer;
+    .countryOptions option {
+        font-size: 1rem;
+        color: #d75959;
+        font-family: 'Lucida Sans';
+    }
+
+    .lastInnerContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .lastInnerContainer p {
@@ -109,44 +131,48 @@
         text-align: center;
     }
 
-    .lastInnerContainer p:hover {
-        cursor: not-allowed;
-    }
-
     .lastInnerContainer button {
-        width: 100%;
-        background-color: #252424;
-        border: none;
+        width: 90%;
         color: white;
-        border-radius: 1rem;
-        margin-top: 1.5rem;
         padding: 0.3rem;
-        font-family: 'Courier New', Courier, monospace;
+        cursor: pointer;
+        border-radius: 50px;
         border: 1px solid #ffff;
+        background-color: #252424;
+        font-family: 'Courier New', Courier, monospace;
     }
 
     .lastInnerContainer button:hover {
-        cursor: pointer;
         background-color: #bf4444;
     }
 
-    .floatingTheme button {
-        position: absolute;
-        top: 4rem;
-        color: #252424;
-        padding: 0.5rem;
+    .floatingTheme {
+        top: 8%;
+        right: 10%;
         border: none;
-        border-radius: 1rem;
-        font-size: 1rem;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        transition: 1s ease;
+        color: #333;
+        padding: 0.5rem;
+        font-size: 12px;
+        cursor: pointer;
+        font-weight: bold;
+        position: absolute;
+        letter-spacing: 1px;
+        border-radius: 100px;
+        font-family: 'Lucida Sans';
+        transition: 1s ease-in-out;
     }
 
-    .floatingTheme button:hover {
-        background-color: #bf4444;
-        color: white;
-        cursor: pointer;
+    .floatingTheme:hover,
+    .floatingThemeLight:hover {
         scale: 1.2;
+        color: white;
+        background-color: #bf4444;
+    }
+
+    @media (width<350px) {
+        .container {
+            width: 80%;
+        }
     }
 </style>
 
@@ -177,9 +203,7 @@
                         <option value="AUD">AUD</option>
                     </select>
                 </div>
-                <div class="conversionImage">
-                    <img src="./arrow-redo-circle-outline.svg" alt="">
-                </div>
+                <div class="direction">➡️</div>
                 <div class="countryOptions">
                     <select name="to" id="toOptions">
                         <option value="PAK">PAK</option>
@@ -199,32 +223,42 @@
                 <p class="msg">
                     1USD = 256PAK
                 </p>
-                <button>Get Exchange Rate</button>
+                <button id="exchangeRateBtn">Get Exchange Rate</button>
             </div>
         </form>
     </div>
-    <div class="floatingTheme">
-        <button>Lights ON</button>
-    </div>
-    <script src="./userInterface.js"></script>
-    <script src="./app.js"></script>
+    <button class="floatingTheme">Lights ON</button>
 </body>
 
 <script>
     let themeTracker = false; // false if Light theme is not applied till now
-    const floatingThemeBtn = document.querySelector(".floatingTheme button");
+    const container = document.querySelector('.container');
+    const floatingThemeBtn = document.querySelector(".floatingTheme");
 
-    floatingThemeBtn.addEventListener("click", () => {
-        if (floatingThemeBtn.innerText === "Lights ON") {
-            floatingThemeBtn.innerText = "Lights OFF";
-            alert("Light Theme ON");
-            floatingThemeBtn.setAttribute("background-color") = black;
-            themeTracker = true;
+    floatingThemeBtn.addEventListener("click", (e) => {
+        if (floatingThemeBtn.textContent.trim() === "Lights ON") {
+            applyLightTheme(e);
         }
-        else if (floatingThemeBtn.innerText === "Lights OFF") {
-            alert("Dark Theme ON");
+        else if (floatingThemeBtn.textContent.trim() === "Lights OFF") {
+            applyDarkTheme(e);
+        }
+        else {
+            alert('error: you have modified the Fixed Text of button with class = "floatingTheme');
         }
     });
+
+    function applyLightTheme(e) {
+        floatingThemeBtn.classList.add('.floatingThemeLight');
+        floatingThemeBtn.textContent = 'Lights OFF';
+        document.body.style.backgroundColor = '#cbc5c5';
+        container.style.backgroundColor = '#ff9797';
+    }
+    function applyDarkTheme(e) {
+        floatingThemeBtn.classList.remove('.floatingThemeLight');
+        floatingThemeBtn.textContent = 'Lights ON';
+        document.body.style.backgroundColor = '#363434';
+        container.style.backgroundColor = '#bf4444';
+    }
 </script>
 
 </html>
