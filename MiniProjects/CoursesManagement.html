@@ -19,6 +19,22 @@
         font-family: 'verdana';
         font-size: 1rem;
         letter-spacing: 0.05rem;
+        overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        background-color: aqua;
+        cursor: grab;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: purple;
+        cursor: grabbing;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(255, 0, 255);
     }
 
     /* Header & Navigation Styling */
@@ -204,6 +220,7 @@
         </div>
         <div class="list-section">
             <ol id="OrderList">
+
                 <li class="course-list">
                     Zoology
                     <button class="edit-btn">Edit</button>
