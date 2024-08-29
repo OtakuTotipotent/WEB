@@ -33,6 +33,11 @@
         text-shadow: -1.5px 1.4px 2px #000;
     }
 
+    h4 {
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
     hr {
         width: 80%;
         height: 1.4vh;
@@ -46,30 +51,112 @@
         width: 80%;
         height: 80%;
         padding: 1vh;
-        margin: auto;
-        margin-top: 1vh;
-        margin-bottom: 1vh;
+        margin: 1vh auto;
         border-radius: 8px;
         box-shadow: 0 0 6px black;
-        background-image: linear-gradient(to top right, #1283af, #8b3947);
+        background-image: linear-gradient(to top right, #614fd9, #ba5163);
     }
 
     form {
         width: 100%;
         height: 100%;
         padding: 8px;
-        border-radius: 8px;
+        display: flex;
+        border-radius: 6px;
         font-family: 'ABeeZee';
-        backdrop-filter: blur(32px);
-        /* color: cornflowerblue; */
+        flex-direction: column;
+        justify-content: space-evenly;
         background: rgba(255, 255, 255, 0.2);
     }
 
+    fieldset {
+        gap: 0.5rem;
+        width: 80%;
+        margin: auto;
+        padding: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 7px;
+        align-items: center;
+        flex-direction: column;
+        border: 2px solid #614fd9;
+        justify-content: space-evenly;
+    }
+
+    label {
+        width: 60%;
+        gap: 0.1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label input {
+        border: none;
+        padding: 4px;
+        outline: none;
+        font-size: 1rem;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .countries-menu {
+        width: 50%;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .countries-menu select {
+        border: none;
+        outline: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 3px 6px;
+        font-weight: bold;
+        border-radius: 50px;
+        background-color: #1283af;
+    }
+
+    /* fieldset currency converter */
+    #cc {}
+
+    /* fieldset currency exchanger */
+    #ce {}
+
     /* MEDIA QUERIES */
 
-    @media (width<375px) {
+    @media (width<400px) {
         h1 {
             font-size: 1.2rem;
+            color: #4130ad;
+            text-shadow: -1.5px 1.4px 2px #fff;
+        }
+
+        h4 {
+            font-size: 0.8rem;
+        }
+
+        main {
+            width: 86%;
+        }
+
+        hr {
+            width: 86%;
+        }
+    }
+
+    @media (width <512px) {
+        label {
+            width: 100%;
+        }
+
+        fieldset {
+            letter-spacing: 0px;
+        }
+
+        .countries-menu {
+            width: 100%;
         }
     }
 
@@ -85,11 +172,11 @@
 
     @media (width > 768px) {
         main {
-            width: 60%;
+            width: 50%;
         }
 
         hr {
-            width: 60%;
+            width: 50%;
         }
     }
 
@@ -109,15 +196,75 @@
     <hr>
     <main>
         <form action="#">
-            <fieldset>
-                <legend>Currency Converter</legend>
+            <fieldset id="cc">
+                <legend>
+                    <h4>Currency Converter</h4>
+                </legend>
                 <label for="cc-user-input">
-                    Enter your amount :
+                    Enter amount:
                     <input type="number" name="" id="cc-user-input">
                 </label>
+                <label for="cc-converted">
+                    <input type="number" name="" id="cc-converted" disabled>
+                    <input type="text" name="" id="cc-price-rate" disabled>
+                </label>
+                <div class="countries-menu">
+                    <select name="from" id="cc-from-user-menu">
+                        <option value="USA">USA</option>
+                        <option value="UAE">UAE</option>
+                        <option value="PAK">PAK</option>
+                        <option value="CHN">CHN</option>
+                        <option value="DIN">DIN</option>
+                        <option value="SPN">SPN</option>
+                        <option value="IND">IND</option>
+                    </select>
+                    <div class="cc-btw-img">👉</div>
+                    <select name="to" id="cc-to-user-menu">
+                        <option value="PAK">PAK</option>
+                        <option value="USA">USA</option>
+                        <option value="UAE">UAE</option>
+                        <option value="CHN">CHN</option>
+                        <option value="DIN">DIN</option>
+                        <option value="SPN">SPN</option>
+                        <option value="IND">IND</option>
+                    </select>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Currency Exchange Rates</legend>
+            <fieldset id="ce">
+                <legend>
+                    <h4>Currency Exchange Rates</h4>
+                </legend>
+                <label for="ce-purchase-input">
+                    Enter amount to be purchased:
+                    <input type="number" name="" id="ce-purchase-input">
+                    <input type="number" name="" id="ce-purchase-output" disabled>
+                </label>
+                <label for="ce-sale-input">
+                    Enter amount you wanna sell:
+                    <input type="number" name="" id="ce-sale-input">
+                    <input type="number" name="" id="ce-sale-output" disabled>
+                </label>
+                <div class="countries-menu">
+                    <select name="from" id="ce-from-user-menu">
+                        <option value="USA">USA</option>
+                        <option value="UAE">UAE</option>
+                        <option value="PAK">PAK</option>
+                        <option value="CHN">CHN</option>
+                        <option value="DIN">DIN</option>
+                        <option value="SPN">SPN</option>
+                        <option value="IND">IND</option>
+                    </select>
+                    <div class="cc-btw-img">👉</div>
+                    <select name="to" id="ce-to-user-menu">
+                        <option value="PAK">PAK</option>
+                        <option value="USA">USA</option>
+                        <option value="UAE">UAE</option>
+                        <option value="CHN">CHN</option>
+                        <option value="DIN">DIN</option>
+                        <option value="SPN">SPN</option>
+                        <option value="IND">IND</option>
+                    </select>
+                </div>
             </fieldset>
         </form>
     </main>
