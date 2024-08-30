@@ -57,7 +57,7 @@
     }
 
     fieldset h5 {
-        color: #d9caca;
+        color: #eef;
         letter-spacing: 1px;
         font-family: sans-serif;
     }
@@ -231,9 +231,9 @@
 </body>
 
 <script>
-    let themeTracker = false; // false if Light theme is not applied till now
     const container = document.querySelector('.container');
     const floatingThemeBtn = document.querySelector(".floatingTheme");
+    const para = document.querySelector('.msg');
 
     floatingThemeBtn.addEventListener("click", (e) => {
         if (floatingThemeBtn.textContent.trim() === "Lights ON") {
@@ -248,16 +248,20 @@
     });
 
     function applyLightTheme(e) {
-        floatingThemeBtn.classList.add('.floatingThemeLight');
+        para.style.color = '#333';
+        container.style.backgroundColor = '#ff9797';
         floatingThemeBtn.textContent = 'Lights OFF';
         document.body.style.backgroundColor = '#cbc5c5';
-        container.style.backgroundColor = '#ff9797';
+        floatingThemeBtn.classList.add('.floatingThemeLight');
+        document.querySelector('fieldset h5').style.color = '#333';
     }
     function applyDarkTheme(e) {
+        document.querySelector('fieldset h5').style.color = '#eef';
         floatingThemeBtn.classList.remove('.floatingThemeLight');
-        floatingThemeBtn.textContent = 'Lights ON';
         document.body.style.backgroundColor = '#363434';
         container.style.backgroundColor = '#bf4444';
+        floatingThemeBtn.textContent = 'Lights ON';
+        para.style.color = '#fff';
     }
 </script>
 
