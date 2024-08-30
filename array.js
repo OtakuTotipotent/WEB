@@ -2,8 +2,8 @@
 const names = ['afnan', 'ali', 'hassan', 'hamza'];
 
 
-// console.log(names.splice(2, 0, 'Hussain')); //? returns the items that it deletes
-// console.log(names);
+console.log(names.splice(0, 1, 'Hussain')); //? returns the items that it deletes
+console.log(names);
 
 // console.log(names.push('Abbas')); //? returns the length of new array after adding new element
 // console.log(names);
