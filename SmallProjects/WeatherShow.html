@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather | Show</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        color: #171717;
+        background: #1e1e1e;
+    }
+
+    .weather-container {
+        width: 40%;
+        display: flex;
+        padding: 2rem;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+        border-radius: 7px;
+        align-items: center;
+        flex-direction: column;
+        background-color: #a2aea7;
+    }
+
+    /* S E A R C H ~ S T Y L I N G */
+
+    .weather-location-search {
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        color: #fff;
+        border-radius: 7px;
+        background: #1e1e1e;
+        padding: 0.5rem 2.5rem;
+        box-shadow: 0 0px 6px 0px #000000;
+    }
+
+    .icon {
+        left: 8px;
+        font-size: 1.2rem;
+        position: absolute;
+    }
+
+    input::placeholder {
+        color: #fff;
+    }
+
+    /* W E A T H E R ~ D I S P L A Y */
+    .weather-display {
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .weather-display>h6 {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    #weather-description {
+        color: #fff;
+        margin: 16px 0;
+        font-size: 1rem;
+        padding: 4px 10px;
+        border-radius: 50px;
+        letter-spacing: 1px;
+        box-shadow: 0 0 6px #000;
+        background-color: #1e1e1e;
+    }
+
+    .img {
+        font-size: 3rem;
+    }
+
+    .temperatures {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* W E A T H E R ~ I N S I G H T S */
+
+    .weather-insights {
+        gap: 12px;
+        width: 100%;
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .w-insight {
+        padding: 6px 16px;
+        border-radius: 6px;
+        background-color: #aabfb3;
+        box-shadow: 2px 2px 4px 0px #6f897a;
+    }
+
+    .w-insight p {
+        font-size: 0.8rem;
+        padding-left: 1rem;
+    }
+
+    /* M E D I A ~ Q U E R I E S */
+
+    @media (width>2048px) {
+        .weather-container {
+            width: 60%;
+        }
+    }
+
+    @media (width<768px) {
+        .weather-container {
+            width: 80%;
+            padding: 1rem;
+        }
+    }
+
+    @media (width<400px) {
+        input {
+            width: 100%;
+        }
+
+        h2,
+        .icon {
+            font-size: 1rem;
+        }
+
+        .weather-display>h6 {
+            font-size: 0.90rem;
+        }
+
+        h4,
+        h6,
+        p {
+            font-size: 0.75rem;
+        }
+
+        input {
+            padding: 0.2rem 2.5rem;
+        }
+
+        .w-insight {
+            padding: 4px;
+        }
+    }
+</style>
+
+<body>
+    <main class="weather-container">
+        <form class="weather-location-search">
+            <div class="icon">🔎</div>
+            <input type="text" id="weather-search-box" placeholder="Search any city . . .">
+        </form>
+        <div class="weather-display">
+            <h2>Weather City Heading</h2>
+            <p>Day | Date | Time</p>
+            <p id="weather-description">Clouds</p>
+            <div class="img">⛈️</div>
+            <h6>exact temperature</h6>
+            <div class="temperatures">
+                <h6>min temp</h6>
+                <h6>max temp</h6>
+            </div>
+        </div>
+        <div class="weather-insights">
+            <div class="w-insight">
+                <h6>🌡️ Feels</h6>
+                <p>56</p>
+            </div>
+            <div class="w-insight">
+                <h6>💧 Humidity</h6>
+                <p>22%</p>
+            </div>
+            <div class="w-insight">
+                <h6>🍃 Wind</h6>
+                <p>100Km/h</p>
+            </div>
+            <div class="w-insight">
+                <h6>💢 Pressure</h6>
+                <p>114 hPa</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
