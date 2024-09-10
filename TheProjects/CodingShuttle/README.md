@@ -1,2 +1,3 @@
 # WEB-CodingShuttle
- A mini Web development project
+
+ A Web development project

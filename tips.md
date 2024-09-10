@@ -31,13 +31,24 @@
 - cera-round-pro
 - Helvetica
 - Neue
-- poppins
 - Segoe UI Emoji
+- Jost
+- Bungee Spice
 
 ## Favorite Colors
 
 - #1e1f25
 - #333
+- #567
 - #282c34
 - #6f7683
 - #202124
+- #ccc // yellowish creamy
+- #f0f0f0 // creamy
+- #845cfe // purplish dark
+- #845cfe // purplish light
+- #d80032 // reddish
+
+## Gradient Designs
+
+- background-image: linear-gradient(45deg, #d2e0fb, #79ac78);

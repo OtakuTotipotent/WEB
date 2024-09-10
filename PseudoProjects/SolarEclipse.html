@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Eclipse</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #333;
+    }
+
+    main {
+        width: 90%;
+        height: 95vh;
+        position: relative;
+        border-radius: 16px;
+        background-color: #ffbb5c;
+        animation: theme 10s ease-in-out infinite;
+    }
+
+    .sun {
+        top: 32px;
+        right: 32px;
+        width: 120px;
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #e25e3e;
+        box-shadow: 0 0 40px 4px red;
+
+        &::before {
+            top: 0;
+            left: 0;
+            content: "";
+            width: 100%;
+            aspect-ratio: 1;
+            position: absolute;
+            border-radius: inherit;
+            background-color: black;
+            animation: eclipse 10s ease-in-out infinite;
+        }
+    }
+
+    @keyframes eclipse {
+        0% {
+            scale: 1;
+            translate: 100%;
+        }
+
+        50% {
+            scale: 0.95;
+            translate: 0;
+        }
+
+        100% {
+            scale: 1;
+            translate: -100%;
+        }
+    }
+
+    @keyframes theme {
+        0% {
+            background-color: #ffbb5cb5;
+        }
+
+        25% {
+            background-color: #fcbf49;
+        }
+
+        50% {
+            background-color: #000000;
+        }
+
+        75% {
+            background-color: #fcbf49;
+        }
+
+        100% {
+            background-color: #ffbb5cb5;
+        }
+    }
+</style>
+
+<body>
+    <main>
+        <div class="sun"></div>
+    </main>
+</body>
+
+</html>

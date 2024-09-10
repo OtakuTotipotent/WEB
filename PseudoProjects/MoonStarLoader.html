@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Star | Loader</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+        background-color: #191826;
+    }
+
+    .moon {
+        width: 100px;
+        aspect-ratio: 1;
+        position: relative;
+        border-radius: 50%;
+        transition: all 2s;
+        background-color: #845cfe;
+        animation: moon-flow 1.5s linear infinite;
+    }
+
+    .moon:hover {
+        /* box-shadow: 0 0 1rem #865dff, 0 0 1.5rem #865dff, 0 0 2rem #865dff, 0 0 2.5rem #865dff, 0 0 3rem #865dff; */
+        scale: 1.5;
+    }
+
+    .moon::before {
+        top: 0;
+        left: 0;
+        width: 80px;
+        content: "";
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #191826;
+    }
+
+    .moon::after {
+        width: 35px;
+        content: "";
+        left: 1.7rem;
+        top: -1.15rem;
+        aspect-ratio: 1;
+        position: absolute;
+        background-color: #865dff;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    @keyframes moon-flow {
+        from {
+            rotate: 0deg;
+        }
+
+        to {
+            rotate: -360deg;
+        }
+    }
+</style>
+
+<body>
+    <div class="moon"></div>
+</body>
+
+</html>

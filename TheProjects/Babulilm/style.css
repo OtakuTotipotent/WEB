@@ -1,0 +1,26 @@
+/*! Variables setting */
+:root {
+    --main-heading-color: #000;
+    /* --main-heading-font-family: ; */
+    /* --main-heading-font-size: ; */
+    --bg-color-blacked: #333;
+    --bg-color-purple: #845cfe;
+    --logo-font-family: "Bungee";
+}
+
+/*! Global Styling  */
+* {
+    margin: 0;
+    padding: 0;
+    /* scrollbar-width: thin; */
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color-blacked);
+}
+
+/*! Modular Styling */
+/*? HEADER STYLING */

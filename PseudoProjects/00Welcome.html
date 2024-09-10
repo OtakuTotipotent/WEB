@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #191826;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 4rem;
+        position: relative;
+        text-align: center;
+        letter-spacing: 2px;
+        font-family: "Bungee Spice";
+
+        &::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: gold;
+            overflow: hidden;
+            position: absolute;
+            text-align: center;
+            content: "WELCOME...";
+            border-right: 2px solid gold;
+            animation: welcome 2s linear 3 alternate;
+        }
+    }
+
+    @keyframes welcome {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <h1>WELCOME...</h1>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes Designer</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100vh;
+        background-color: #6f7683;
+        background-image: linear-gradient(to bottom left, #d2e0fb, #79ac78);
+    }
+
+    main {
+        top: 3rem;
+        gap: 1rem;
+        width: 80%;
+        height: 85vh;
+        margin: auto;
+        display: flex;
+        padding: 1rem;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: center;
+        background-color: #567;
+        border-radius: 0 16px 16px 0;
+        border-left: 7px solid #0a2d4f;
+    }
+
+    .leafs {
+        width: 100px;
+        height: 100px;
+        box-shadow: 2px -2px 3px 1px #000;
+    }
+
+    #leaf1 {
+        border-radius: 100% 0%;
+        background-image: linear-gradient(to right top, #075307, #158a4b, #008793, #00bf72);
+    }
+
+    #leaf2 {
+        border-radius: 65% 0%;
+        background-image: linear-gradient(to right top, #075307, #158a4b);
+    }
+</style>
+
+<body>
+    <header></header>
+    <main>
+        <div id="leaf1" class="leafs"></div>
+        <div id="leaf2" class="leafs"></div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

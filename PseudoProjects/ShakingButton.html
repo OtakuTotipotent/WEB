@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake IT</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #191826;
+    }
+
+    button {
+        font-size: 2rem;
+        color: #845cfe;
+        font-weight: 1000;
+        letter-spacing: 2px;
+        padding: 0.5rem 2rem;
+        font-family: "Bungee Spice";
+        border: 4px solid #845cfe;
+        background-color: transparent;
+
+        &:hover {
+            color: #d80032;
+            border-color: #d80032;
+            animation: shake 0.15s linear 2;
+        }
+    }
+
+    @keyframes shake {
+        0% {
+            rotate: 20deg;
+        }
+
+        50% {
+            rotate: -20deg;
+        }
+
+        100% {
+            rotate: 20deg;
+        }
+    }
+</style>
+
+<body>
+    <button>Click Me</button>
+
+</body>
+
+</html>
