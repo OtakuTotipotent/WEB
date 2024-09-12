@@ -1,26 +1,117 @@
-/*! Variables setting */
-:root {
-    --main-heading-color: #000;
-    /* --main-heading-font-family: ; */
-    /* --main-heading-font-size: ; */
-    --bg-color-blacked: #333;
-    --bg-color-purple: #845cfe;
-    --logo-font-family: "Bungee";
-}
-
 /*! Global Styling  */
 * {
     margin: 0;
     padding: 0;
-    /* scrollbar-width: thin; */
+    scrollbar-width: thin;
     box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --para-color: #504e4d;
+    --font-color: #424242;
+    --main-color: #0062ff;
+    --heading-color: #000a19;
+    --supporting-color: #ebf3fe;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-color-blacked);
+    background-color: #aaa;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p,
+li,
+a {
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: var(--para-color);
+    font-family: "Urbanist", sans-serif;
 }
 
 /*! Modular Styling */
 /*? HEADER STYLING */
+.section-navbar {
+    top: 0;
+    width: 100%;
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 142rem;
+    padding: 9.6rem 2.4rem;
+}
+
+.section-navbar .container {
+    display: flex;
+    padding: .7rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    padding: 1rem;
+    cursor: default;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #0062ff;
+    box-shadow: 1px 2px 2px 0 #fff;
+}
+
+.section-navbar .container ul {
+    gap: 3.2rem;
+    display: flex;
+
+    & li a {
+        font-weight: 600;
+        font-size: 1.6rem;
+        display: inline-block;
+        color: var(--heading-color);
+        position: relative;
+
+        &::after {
+            left: 0;
+            width: 0%;
+            content: "";
+            bottom: -0.3rem;
+            position: absolute;
+            transition: all 0.3s linear;
+            border-bottom: 0.2rem solid var(--main-color);
+        }
+    }
+
+    & li a:hover {
+        color: var(--main-color);
+    }
+
+    & li a:hover::after {
+        width: 100%;
+        color: var(--main-color);
+    }
+}
