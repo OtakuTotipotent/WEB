@@ -7,12 +7,16 @@
 }
 
 :root {
+    --h-color: #0a043c;
     --bg-color: #ffffff;
     --para-color: #504e4d;
     --font-color: #424242;
     --main-color: #0062ff;
+    --white-color: #ffffff;
     --heading-color: #000a19;
     --supporting-color: #ebf3fe;
+    --btn-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 html {
@@ -22,7 +26,7 @@ html {
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #aaa;
+    /* background-color: #aaa; */
 }
 
 h1,
@@ -45,6 +49,7 @@ ul {
 p,
 li,
 a {
+    line-height: 1.5;
     font-weight: 400;
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
@@ -52,19 +57,34 @@ a {
     font-family: "Urbanist", sans-serif;
 }
 
-/*! Modular Styling */
-/*? HEADER STYLING */
+/*! Modular/Reusable Styling */
+.container {
+    margin: 0 auto;
+    max-width: 142rem;
+    padding: 9.6rem 2.4rem;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 0.6rem;
+    padding: 1.2rem 3.2rem;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: var(--btn-box-shadow);
+        background-color: var(--btn-hover-bg-color);
+    }
+}
+
+
+/*! HEADER STYLING */
 .section-navbar {
     top: 0;
     width: 100%;
     position: sticky;
     box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: 142rem;
-    padding: 9.6rem 2.4rem;
 }
 
 .section-navbar .container {
@@ -81,7 +101,7 @@ a {
     text-align: center;
     border-radius: 50%;
     background-color: #0062ff;
-    box-shadow: 1px 2px 2px 0 #fff;
+    box-shadow: 0.61px 1.5px 2px 0 #000;
 }
 
 .section-navbar .container ul {
@@ -114,4 +134,43 @@ a {
         width: 100%;
         color: var(--main-color);
     }
+}
+
+/*! HERO SECTION STYLING */
+main {
+    background-image: linear-gradient(to top right, #3d86fa, #4484fb, #679eff, #b3d2ff, #ebf3fe);
+}
+
+.section-hero .container {
+    gap: 6.4rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+
+    & .hero-subheading {
+        font-weight: 700;
+        font-size: 1.7rem;
+        word-spacing: 0.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: var(--btn-hover-bg-color);
+    }
+
+    & .hero-heading {
+        font-weight: 700;
+        font-family: Jost;
+        font-size: 4.8rem;
+        color: var(--btn-hover-bg-color);
+    }
+
+    & .hero-para {
+        margin: 2rem 0 4.2rem 0;
+        color: var(--white-color);
+    }
+}
+
+.section-hero--image img {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1);
 }
