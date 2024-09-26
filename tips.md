@@ -37,15 +37,15 @@
 
 ## Favorite Colors
 
-- #1e1f25
-- #333
-- #567
-- #282c34
+- #1e1f25 // dark clay blakish
+- #333 // light clay blackish
+- #567 // light clay
+- #282c34 // dark clay
 - #6f7683
 - #202124
 - #ccc // yellowish creamy
 - #f0f0f0 // creamy
-- #845cfe // purplish dark
+- #231a3d // purplish dark
 - #845cfe // purplish light
 - #d80032 // reddish
 

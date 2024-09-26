@@ -1,0 +1,131 @@
+/*!     resetting web behavior  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Jost';
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'ABeeZee';
+}
+
+h4,
+h5,
+h6,
+p {
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+li,
+a {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+/*! scrollbar Section */
+
+::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: wheat;
+}
+
+::-webkit-scrollbar-thumb {
+    background: greenyellow;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6145ac;
+}
+
+/*!     Theme & Designing */
+body {
+    color: #f0f0f0;
+    background-color: #1a132e;
+}
+
+/*!     Layout: Common utilities  */
+.container {
+    margin: auto;
+    max-width: 142rem;
+    padding: 9.6rem 2.4rem;
+}
+
+/*! Header & Navigation */
+header {
+    width: 100%;
+    height: 8vh;
+    box-shadow: 0 0 4px #fff;
+    backdrop-filter: blur(50px);
+    position: sticky;
+    top: 0;
+}
+
+header .container {
+    height: 100%;
+    display: flex;
+    padding-block: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header #website-logo {
+    color: greenyellow;
+    font-size: 0.8rem;
+
+    & span {
+        color: #f0f0f0;
+        font-size: 3rem;
+        font-style: italic;
+    }
+}
+
+header .nav-links {
+    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    & li {
+        font-weight: 600;
+        height: 100%;
+        list-style-type: none;
+    }
+
+    & a {
+        color: #fff;
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+        letter-spacing: 0.03rem;
+
+        &::after {
+            left: 0;
+            width: 0%;
+            content: "";
+            bottom: -0.3rem;
+            position: absolute;
+            transition: all 0.3s linear;
+            border-bottom: 0.2rem solid red;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+header .nav-links li:last-child a {
+    color: greenyellow;
+}
