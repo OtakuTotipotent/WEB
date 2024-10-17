@@ -41,8 +41,8 @@
 - #333 // light clay blackish
 - #567 // light clay
 - #282c34 // dark clay
-- #6f7683
-- #202124
+- #6f7683 // slate white grey
+- #202124 // dark slate
 - #ccc // yellowish creamy
 - #f0f0f0 // creamy
 - #231a3d // purplish dark
