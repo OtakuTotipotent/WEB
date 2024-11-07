@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #191826;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 3rem;
+        letter-spacing: 2px;
+        font-family: "Bungee Spice";
+        padding: 1rem 2rem;
+    }
+    
+    .button {
+        overflow: hidden;
+        border-radius: 1rem;
+        background-color: red;
+        animation: subscribe 3s linear infinite alternate;
+    }
+
+    .container {
+        width: 436px;
+    }
+
+    @keyframes subscribe {
+        0% {
+            width: 0;
+            border-radius: 0;
+        }
+
+        50% {
+            width: 50%;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <h1>SUBSCRIBE...</h1>
+        </div>
+    </div>
+</body>
+
+</html>
