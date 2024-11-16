@@ -16,9 +16,8 @@ h3 {
     font-family: 'ABeeZee';
 }
 
+h3,
 h4,
-h5,
-h6,
 p {
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
@@ -49,19 +48,49 @@ a {
 }
 
 /*!     Theme & Designing */
+
 body {
     color: #f0f0f0;
     background-color: #1a132e;
 }
 
 /*!     Layout: Common utilities  */
+
 .container {
-    margin: auto;
-    max-width: 142rem;
+    margin: 0 auto;
+    max-width: 124rem;
     padding: 9.6rem 2.4rem;
 }
 
+.main-sections {
+    height: 92vh;
+    /* overflow: auto; */
+}
+
+.btn {
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    word-spacing: 5px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 2px solid white;
+}
+
+.logo-text--design {
+    color: white;
+    font-style: italic;
+
+    & i {
+        color: greenyellow;
+        font-style: normal;
+    }
+}
+
 /*! Header & Navigation */
+
 header {
     top: 0;
     width: 100%;
@@ -69,6 +98,7 @@ header {
     position: sticky;
     backdrop-filter: blur(50px);
     box-shadow: 0 0 7px black;
+    z-index: 100;
 }
 
 header .container {
@@ -79,14 +109,24 @@ header .container {
     justify-content: space-between;
 }
 
-header #website-logo {
-    color: greenyellow;
+header .website-logo a {
     font-size: 0.8rem;
+    color: greenyellow;
+    text-decoration: none;
+    transition: all 0.5s linear;
 
     & span {
         color: #f0f0f0;
         font-size: 3rem;
         font-style: italic;
+    }
+
+    &:hover {
+        color: #f0f0f0;
+
+        & span {
+            color: greenyellow;
+        }
     }
 }
 
@@ -120,8 +160,12 @@ header .nav-links {
             border-bottom: 0.2rem solid greenyellow;
         }
 
-        &:hover::after {
-            width: 100%;
+        &:hover {
+            color: greenyellow;
+
+            &::after {
+                width: 100%;
+            }
         }
     }
 }
@@ -129,3 +173,425 @@ header .nav-links {
 header .nav-links li:last-child a {
     color: greenyellow;
 }
+
+/*! Intro Section */
+
+.intro-div {
+    gap: 10rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.intro-img img {
+    width: 100%;
+    height: auto;
+    transition: all 1s linear;
+
+    &:hover {
+        transform: scaleX(-1);
+    }
+}
+
+.intro-text h5 {
+    font-size: 1.6rem;
+    word-spacing: 5px;
+    color: greenyellow;
+    letter-spacing: 1.5px;
+    font-family: Urbanist, sans-serif;
+}
+
+.intro-text h2 {
+    color: #0062ff;
+    font-size: 4rem;
+}
+
+.intro-text p {
+    letter-spacing: 1px;
+    margin: 4rem 0 9rem 0;
+    text-align: justify;
+
+    span {
+        color: greenyellow;
+        text-transform: capitalize;
+    }
+
+    &::first-letter {
+        font-size: 2.5rem;
+    }
+}
+
+.enroll-button {
+    display: block;
+    margin-left: 3rem;
+    color: greenyellow;
+    border: 2px solid greenyellow;
+    transition: 0.6s ease-in-out;
+}
+
+.enroll-button:hover {
+    color: #0062ff;
+    background-color: greenyellow;
+}
+
+/*! About Section in Main */
+
+.about-div {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+}
+
+.about-text p {
+    word-spacing: 3px;
+    color: #00a6ed;
+}
+
+.about-images {
+    gap: 10rem;
+    display: flex;
+}
+
+.about-images--div {
+    gap: 2rem;
+    display: grid;
+    justify-items: center;
+
+    & p {
+        text-align: justify;
+    }
+
+    & h3 {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+        color: greenyellow;
+    }
+}
+
+.about-images-div--img {
+    width: 40%;
+    aspect-ratio: 1;
+    padding: 2rem;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.about-images-div--img img {
+    width: 100%;
+    height: auto;
+}
+
+.about-images--div:hover>.about-images-div--img {
+    transform: rotate(360deg);
+    background: linear-gradient(to right, #0575e6, #021b79);
+}
+
+/*! Courses Section  */
+
+.courses-heading h2 {
+    font-size: 3rem;
+}
+
+.courses-heading p {
+    margin-block: 1rem;
+    color: greenyellow;
+}
+
+.courses-cards--container {
+    gap: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-card {
+    padding: 2rem;
+    cursor: pointer;
+    flex-basis: 240px;
+    box-shadow: 2px 2px 5px -2px black;
+
+    &:hover {
+        box-shadow: 2px 2px 5px -2px;
+    }
+
+    &:nth-child(1) {
+        color: #ea7130;
+    }
+
+    &:nth-child(2) {
+        color: #e79627;
+    }
+
+    &:nth-child(3) {
+        color: #7963e6;
+    }
+
+    &:nth-child(4) {
+        color: #b4262a;
+    }
+
+    &:nth-child(5) {
+        color: #497ce3;
+    }
+
+    &:nth-child(6) {
+        color: #7963e6;
+    }
+
+    &:nth-child(7) {
+        color: #ea7130;
+    }
+
+    &:nth-child(8) {
+        color: #6aab20;
+    }
+}
+
+.course-img img {
+    width: 40px;
+}
+
+.course-card h2 {
+    font-size: 2rem;
+    margin-block: 4px;
+    letter-spacing: 1.4px;
+}
+
+/*! Specs Section */
+
+.specs-div {
+    display: grid;
+    align-content: space-evenly;
+}
+
+.specs-heading {
+    margin-block: 4rem;
+}
+
+.specs-heading h2 {
+    font-size: 2rem;
+    color: greenyellow;
+}
+
+.specs-heading p {
+    margin-top: 0.5rem;
+}
+
+.specs {
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+}
+
+.specs-container--left,
+.specs-container--right {
+    gap: 3rem;
+    display: grid;
+}
+
+.specs-container--left .specs-box {
+    display: flex;
+    align-items: end;
+    text-align: right;
+    flex-direction: column;
+}
+
+.specs-container--right .specs-box {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.specs-number {
+    color: #021b79;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    background-color: greenyellow;
+}
+
+.specs-box h3 {
+    color: #00a6ed;
+}
+
+.specs-container--img,
+figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.specs-container--img img {
+    width: 100%;
+}
+
+.specs-container--img figure::before,
+.specs-container--img figure::after {
+    top: 50%;
+    left: 50%;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.specs-container--img figure::before {
+    z-index: -1;
+    width: 92%;
+    aspect-ratio: 1;
+    background-color: #80b1ff;
+    box-shadow: 0 0 10px 0 #99c0ff;
+    animation: circle 5s infinite linear;
+}
+
+.specs-container--img figure::after {
+    width: 100%;
+    z-index: -2;
+    aspect-ratio: 1;
+    border: 0.2rem solid #4e5f2a70;
+}
+
+@keyframes circle {
+    0% {
+        background-color: #b3d0ff;
+    }
+
+    25% {
+        background-color: #80b1ff;
+    }
+
+    50% {
+        background-color: #4d91ff;
+    }
+
+    75% {
+        background-color: #99c0ff;
+    }
+
+    100% {
+        background-color: #3381ff;
+    }
+}
+
+/*! Join Section */
+
+.join-section {
+    margin-top: 32rem;
+    position: relative;
+    margin-bottom: -15rem;
+}
+
+.join-div {
+    width: 60%;
+    display: grid;
+    padding: 4rem;
+    margin: 0 auto;
+    max-width: 124rem;
+    background-color: #021b79;
+    grid-template-columns: 1.3fr 2fr;
+}
+
+.join-text .enroll-button {
+    margin: 0;
+
+    &:hover {
+        color: #0575e6;
+        border-color: #040d12;
+        background-color: #040d12;
+    }
+}
+
+.join-text h2 {
+    font-size: 4rem;
+}
+
+.join-text p {
+    margin: 1rem 0 3rem 0;
+}
+
+.join-img img {
+    width: 70%;
+}
+
+/*! Footer */
+
+footer {
+    padding-top: 14rem;
+    background-color: #040d12;
+}
+
+.footer-container {
+    display: flex;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.footer-container h4 {
+    font-size: 2rem;
+    font-family: urbanist;
+}
+
+.footer-container p {
+    color: #0062ff;
+    margin: 1rem 0 2rem 0;
+}
+
+.footer-container a {
+    padding: 4px;
+    color: #0062ff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer-logos {
+    gap: 3rem;
+    display: flex;
+}
+
+.footer-logos div {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: all 1s linear;
+    }
+}
+
+.footer-logos img:hover {
+    rotate: 360deg;
+}
+
+.footer-links,
+.footer-courses,
+.footer-blogs {
+    & li {
+        list-style: none;
+    }
+
+    & a:hover {
+        color: greenyellow;
+    }
+}
+
+
+/*! BLOGS PAGE */
+/*! Blogs Section */
+
