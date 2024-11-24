@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassMorphism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            place-items: center;
+            color: dodgerblue;
+        }
+
+        .container {
+            position: relative;
+            /* backdrop-filter: blur(20px); */
+        }
+
+        .box {
+            position: relative;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 14px;
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 70px 10px rgba(128, 128, 128, 0.3);
+            z-index: 10;
+
+            & h1 {
+                color: cyan;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            & p {
+                color: tomato;
+                font-size: 20px;
+                font-family: cursive;
+            }
+        }
+
+        .bg-bubbles {
+            width: 45px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .bg-bubble-1 {
+            top: 16%;
+            left: 10%;
+            z-index: 1;
+            background-color: darkblue;
+        }
+
+        .bg-bubble-2 {
+            top: 60%;
+            right: 10%;
+            z-index: 1;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Glassmorphism</h1>
+            <p>Looks like a classy Glass Effect. Right!</p>
+        </div>
+        <div class="bg-bubbles bg-bubble-1"></div>
+        <div class="bg-bubbles bg-bubble-2"></div>
+    </div>
+
+</body>
+
+</html>
