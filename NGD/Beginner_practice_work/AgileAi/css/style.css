@@ -55,13 +55,35 @@ body {
     gap: 1rem;
     display: grid;
     grid-template-rows: 3fr 2fr;
+}
 
-    & .credits-indicator {
-        background-color: #1f2938;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.credits-indicator {
+    display: grid;
+    position: relative;
+    place-items: center;
+    background-color: #1f2938;
+
+    & .credits-indicator-text {
+        display: grid;
+        font-size: small;
+        place-items: center;
+        border: 4px solid #394760;
+        background-color: #111828;
     }
+
+    & .credits-indicator-rim {
+        rotate: 35deg;
+        border: 4px solid #a455f7;
+        border-left-color: transparent;
+    }
+}
+
+.credits-indicator-rim,
+.credits-indicator-text {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    border-radius: 50%;
 }
 
 .go-back-icon {
