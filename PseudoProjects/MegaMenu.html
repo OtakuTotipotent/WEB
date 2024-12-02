@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Menu</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #fff;
+            background-color: #333333;
+        }
+
+        header {
+            top: 0px;
+            width: 100%;
+            position: sticky;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.125);
+        }
+
+        .header-container {
+            margin: auto;
+            display: flex;
+            max-width: 1170px;
+            position: relative;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            justify-content: space-between;
+
+            & .logo {
+                width: 80px;
+                height: 65px;
+                overflow: hidden;
+                border-radius: 10px;
+                background-color: #333333;
+
+                & img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .header-container nav>ul {
+            gap: 1rem;
+            display: flex;
+            list-style: none;
+
+            & li a {
+                color: #fff;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+                font-family: sans-serif;
+
+                &:hover {
+                    color: #333333;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li> <a href="">Home</a> </li>
+                    <li> <a href="">Courses</a> </li>
+                    <li> <a href="">Gallery</a> </li>
+                    <li> <a href="">Services</a> </li>
+                    <li> <a href="">Contact Us</a> </li>
+                    <li> <a href="">Account</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+</body>
+
+</html>

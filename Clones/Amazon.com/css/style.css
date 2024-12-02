@@ -5,7 +5,7 @@
     font-family: "Arial", sans-serif;
 }
 
-/** Utility Classes */
+/*! Utility Classes */
 
 .hover-border {
     cursor: pointer;
@@ -17,7 +17,11 @@
     }
 }
 
-/** Navbar **/
+.heavy-text {
+    font-weight: 700;
+}
+
+/*! Header **/
 
 .navbar {
     width: 100%;
@@ -57,10 +61,11 @@
 
     & .nav-location--text {
         color: #fff;
+        font-weight: 600;
 
         & p {
             color: #cccccc;
-            font-size: 0.85rem;
+            font-size: 12px;
         }
 
         & .country-name {
@@ -75,6 +80,11 @@
     display: flex;
     overflow: hidden;
     border-radius: 4px;
+    border: 2px solid transparent;
+
+    &:hover {
+        border-color: #febd68;
+    }
 
     & input {
         width: 100%;
@@ -111,11 +121,63 @@
 }
 
 .nav-language {
-    width: 30px;
-    height: 40px;
+    padding: 2px;
     display: flex;
 
-    & img{
-        height: 30px;
+    & img {
+        height: 20px;
+    }
+
+    & select {
+        border: none;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+        background-color: #0f1111;
+    }
+}
+
+.nav-account {
+    color: white;
+
+    & p {
+        padding-left: 4px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    & select {
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+        line-height: 15px;
+        background-color: #0f1111;
+    }
+}
+
+.nav-order {
+    color: #fff;
+    padding: 2px;
+
+    & p {
+        font-size: 12px;
+    }
+
+    & .heavy-text {
+        font-size: 14px;
+        line-height: 15px;
+    }
+}
+
+.nav-cart {
+    padding: 2px;
+    display: flex;
+    color: #fff;
+    align-items: flex-end;
+
+    & img {
+        width: 30px;
     }
 }
