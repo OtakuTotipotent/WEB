@@ -20,6 +20,7 @@
         header {
             top: 0px;
             width: 100%;
+            height: 60px;
             position: sticky;
             backdrop-filter: blur(8px);
             background-color: rgba(255, 255, 255, 0.125);
@@ -27,6 +28,7 @@
 
         .header-container {
             margin: auto;
+            height: 100%;
             display: flex;
             max-width: 1170px;
             position: relative;
@@ -35,8 +37,8 @@
             justify-content: space-between;
 
             & .logo {
-                width: 80px;
-                height: 65px;
+                width: 60px;
+                height: 45px;
                 overflow: hidden;
                 border-radius: 10px;
                 background-color: #333333;
@@ -48,20 +50,65 @@
         }
 
         .header-container nav>ul {
-            gap: 1rem;
+            gap: 1.5rem;
             display: flex;
             list-style: none;
+        }
 
-            & li a {
-                color: #fff;
-                text-decoration: none;
-                letter-spacing: 0.5px;
-                font-family: sans-serif;
+        .header-container nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            font-family: sans-serif;
 
-                &:hover {
-                    color: #333333;
+            &:hover {
+                color: #000;
+            }
+        }
+
+        .mega-menu {
+            left: 0;
+            top: 120%;
+            opacity: 0;
+            width: 100%;
+            gap: 0.5rem;
+            display: flex;
+            transition: 1s;
+            flex-wrap: wrap;
+            padding: 1rem 2rem;
+            visibility: hidden;
+            position: absolute;
+            backdrop-filter: blur(8px);
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+            & .mega-menu-card {
+                display: grid;
+                padding: 0.7rem;
+                flex-basis: 32%;
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.125);
+
+                & ul {
+                    list-style: none;
+                    padding-left: 0.4rem;
+
+                    & li {
+                        margin: 4px;
+                    }
+                }
+
+                & h3 {
+                    font-family: sans-serif;
                 }
             }
+        }
+
+        nav>ul>li:hover .mega-menu {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
@@ -75,9 +122,111 @@
             <nav>
                 <ul>
                     <li> <a href="">Home</a> </li>
-                    <li> <a href="">Courses</a> </li>
+                    <li> <a href="">Courses</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-card">
+                                <h3>Website Development</h3>
+                                <ul>
+                                    <li> <a href="">HTML</a> </li>
+                                    <li> <a href="">CSS</a> </li>
+                                    <li> <a href="">Javascript</a> </li>
+                                    <li> <a href="">Python</a> </li>
+                                    <li> <a href="">C#</a> </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>App Development</h3>
+                                <ul>
+                                    <li> <a href="">MERN Stack</a> </li>
+                                    <li> <a href="">Flutter</a> </li>
+                                    <li> <a href="">Java</a> </li>
+                                    <li> <a href="">C++</a> </li>
+                                    <li> <a href="">.Net Framework</a> </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>App Development</h3>
+                                <ul>
+                                    <li> <a href="">MERN Stack</a> </li>
+                                    <li> <a href="">Flutter</a> </li>
+                                    <li> <a href="">Java</a> </li>
+                                    <li> <a href="">C++</a> </li>
+                                    <li> <a href="">.Net Framework</a> </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>Website Development</h3>
+                                <ul>
+                                    <li> <a href="">HTML</a> </li>
+                                    <li> <a href="">CSS</a> </li>
+                                    <li> <a href="">Javascript</a> </li>
+                                    <li> <a href="">Python</a> </li>
+                                    <li> <a href="">C#</a> </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>App Development</h3>
+                                <ul>
+                                    <li> <a href="">MERN Stack</a> </li>
+                                    <li> <a href="">Flutter</a> </li>
+                                    <li> <a href="">Java</a> </li>
+                                    <li> <a href="">C++</a> </li>
+                                    <li> <a href="">.Net Framework</a> </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>App Development</h3>
+                                <ul>
+                                    <li> <a href="">MERN Stack</a> </li>
+                                    <li> <a href="">Flutter</a> </li>
+                                    <li> <a href="">Java</a> </li>
+                                    <li> <a href="">C++</a> </li>
+                                    <li> <a href="">.Net Framework</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                     <li> <a href="">Gallery</a> </li>
-                    <li> <a href="">Services</a> </li>
+                    <li> <a href="">Services</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-card">
+                                <h3>Education</h3>
+                                <ul>
+                                    <li><a href="">Development</a></li>
+                                    <li><a href="">Designing</a></li>
+                                    <li><a href="">Programming</a></li>
+                                    <li><a href="">College</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>Academy</h3>
+                                <ul>
+                                    <li><a href="">Dollar</a></li>
+                                    <li><a href="">Ipsum</a></li>
+                                    <li><a href="">Trolling</a></li>
+                                    <li><a href="">Millions</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>Mentorship</h3>
+                                <ul>
+                                    <li><a href="">Social Media</a></li>
+                                    <li><a href="">Meta</a></li>
+                                    <li><a href="">Computer</a></li>
+                                    <li><a href="">Ai</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-card">
+                                <h3>Technology</h3>
+                                <ul>
+                                    <li><a href="">Human</a></li>
+                                    <li><a href="">Civil</a></li>
+                                    <li><a href="">Future</a></li>
+                                    <li><a href="">Agriculture</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                     <li> <a href="">Contact Us</a> </li>
                     <li> <a href="">Account</a> </li>
                 </ul>
