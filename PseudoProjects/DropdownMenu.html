@@ -22,10 +22,115 @@
 
         /** Navbar */
 
-        .navbar {
-            margin: auto;
+        header {
+            top: 0;
             height: 60px;
+            position: sticky;
+            backdrop-filter: blur(16px);
+            background-color: rgb(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            height: 100%;
+            margin: auto;
+            display: flex;
+            padding: 0 1rem;
             max-width: 1170px;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .web-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #342723;
+            box-shadow: 0 0 4px #553328;
+
+            & img {
+                width: 100%;
+            }
+        }
+
+        .navbar a {
+            color: #9fa;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-family: monospace;
+        }
+
+        .navbar ul {
+            list-style: none;
+
+            & li {
+                transition: all 0.4s;
+            }
+        }
+
+        .menu-links {
+            gap: 0.5rem;
+            display: flex;
+            padding: 1rem 0 0 1rem;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        /* Sidebar Menu  */
+        .navbar-menu-open,
+        .navbar-menu-close {
+            color: #9fa;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: rotate 1s;
+
+            &:hover {
+                rotate: 360deg;
+            }
+        }
+
+        .navbar-menu-close {
+            bottom: 0;
+            font-size: 2.5rem;
+            position: absolute;
+
+            &:hover {
+                color: #342723;
+            }
+        }
+
+        .nav-sidebar {
+            top: 0;
+            width: 60vw;
+            right: 0vw;
+            height: 60vh;
+            transition: 1s;
+            position: fixed;
+            backdrop-filter: blur(16px);
+            border-bottom-left-radius: 16px;
+            box-shadow: -1px 2px 12px 0px #00000080;
+            background-color: rgba(153, 255, 170, 0.2);
+        }
+
+        /* Mega Menu */
+
+        /* Navbar Links */
+        .nav-links {
+            gap: 2rem;
+            display: none;
+        }
+
+        .nav-links-show {
+            display: flex;
+        }
+
+        .nav-links>li:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-links>li:hover {
+            transform: translateX(8px);
         }
     </style>
 </head>
@@ -34,13 +139,22 @@
     <header>
         <nav class="navbar">
             <div class="web-logo">
-                <img src="" alt="website-logo">
+                <img src="./Hello.png" alt="website-logo">
             </div>
+            <span class="navbar-menu-open"> &#9776 </span>
+            <ul class="nav-sidebar menu-links">
+                <span class="navbar-menu-close"> &times </span>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact-us</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
             <ul class="nav-links">
                 <li><a href="">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Services</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="">Contact-us</a></li>
                 <li><a href="">Account</a></li>
             </ul>
         </nav>
