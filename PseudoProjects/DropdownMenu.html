@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drop Down Menu</title>
-
+    <title>Dropdown Menu</title>
     <style>
+        /* DEFAULT STYLE */
         * {
             margin: 0;
             padding: 0;
@@ -14,152 +14,365 @@
         }
 
         body {
-            width: 100vw;
-            height: 100vh;
-            font-family: "ABeeZee", sans-serif;
-            background: linear-gradient(120deg, #342723, #151521);
+            font-family: Poppins;
+            background-color: slategray;
         }
 
-        /** Navbar */
+        /* GENERAL STYLE */
 
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* GENERAL CLASSES */
+
+        /* HEADER */
         header {
-            top: 0;
+            width: 100%;
             height: 60px;
             position: sticky;
+            top: 0;
+            background-color: #33333380;
             backdrop-filter: blur(16px);
-            background-color: rgb(0, 0, 0, 0.05);
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
         }
 
-        .navbar {
-            height: 100%;
-            margin: auto;
-            display: flex;
+        .header-container {
             padding: 0 1rem;
             max-width: 1170px;
-            position: relative;
+            margin: auto;
+            height: 100%;
+            display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .web-logo {
-            width: 30px;
-            height: 30px;
-            border-radius: 6px;
-            background-color: #342723;
-            box-shadow: 0 0 4px #553328;
+        /* LOGO */
 
-            & img {
-                width: 100%;
-            }
-        }
-
-        .navbar a {
-            color: #9fa;
-            font-size: 0.9rem;
-            text-decoration: none;
-            font-family: monospace;
-        }
-
-        .navbar ul {
-            list-style: none;
-
-            & li {
-                transition: all 0.4s;
-            }
-        }
-
-        .menu-links {
-            gap: 0.5rem;
-            display: flex;
-            padding: 1rem 0 0 1rem;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-
-        /* Sidebar Menu  */
-        .navbar-menu-open,
-        .navbar-menu-close {
-            color: #9fa;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: rotate 1s;
-
-            &:hover {
-                rotate: 360deg;
-            }
-        }
-
-        .navbar-menu-close {
-            bottom: 0;
-            font-size: 2.5rem;
-            position: absolute;
-
-            &:hover {
-                color: #342723;
-            }
-        }
-
-        .nav-sidebar {
-            top: 0;
-            width: 60vw;
-            right: 0vw;
-            height: 60vh;
+        .logo {
+            height: 40px;
+            background-color: rgba(112, 128, 144, 0.4);
+            border-radius: 5px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
             transition: 1s;
-            position: fixed;
-            backdrop-filter: blur(16px);
-            border-bottom-left-radius: 16px;
-            box-shadow: -1px 2px 12px 0px #00000080;
-            background-color: rgba(153, 255, 170, 0.2);
         }
 
-        /* Mega Menu */
+        .logo img {
+            height: 100%;
+        }
 
-        /* Navbar Links */
-        .nav-links {
-            gap: 2rem;
+        /* NAVBAR */
+
+        nav {
             display: none;
+            height: 100%;
+            position: relative;
         }
 
-        .nav-links-show {
+        .navbar {
+            gap: 1.5rem;
             display: flex;
         }
 
-        .nav-links>li:hover {
-            transform: translateY(-5px);
+        .navbar>li {
+            height: 100%;
         }
 
-        .menu-links>li:hover {
-            transform: translateX(8px);
+        .navbar>li>a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #99ffaa;
+            border-bottom: 4px solid transparent;
+            border-radius: 0 0 5px 5px;
+            transition: 0.6s;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar-menu-show {
+            font-size: 1.5rem;
+            transition: 1s;
+            cursor: pointer;
+            color: #99ffaa;
+        }
+
+        .sidebar-menu {
+            width: 45vw;
+            height: 45vh;
+            box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            right: -50vw;
+            backdrop-filter: blur(16px);
+            padding: 4rem 1.4rem;
+            transition: 1s;
+            border-bottom-left-radius: 14px;
+        }
+
+        .sidebar-menu li,
+        .sidebar-menu a {
+            display: block;
+            width: 100%;
+            transition: 0.6s;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 0.4rem;
+        }
+
+        .sidebar-menu-hide {
+            display: inline-block;
+            font-size: 2rem;
+            transition: 1s;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            color: #99ffaa;
+        }
+
+        /* DROPDOWN */
+        .dropdown-menu {
+            background-color: rgba(153, 255, 170, 0.45);
+            backdrop-filter: blur(16px);
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.25);
+            margin-top: 3px;
+            padding: 1rem;
+            position: absolute;
+            left: 0;
+            top: 120%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: 1s;
+        }
+
+        .dropdown-menu-item h4 {
+            font-size: 0.8rem;
+            cursor: context-menu;
+        }
+
+        .dropdown-menu-item a {
+            padding: 0 0.4rem;
+            transition: 0.5s;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+
+        /* HOVER & EFFECTS */
+
+        .logo:hover {
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .sidebar-menu-show:hover,
+        .sidebar-menu-hide:hover {
+            color: black;
+            rotate: -180deg;
+        }
+
+        .sidebar-menu a:hover {
+            color: #99ffaa;
+            margin-left: 1rem;
+        }
+
+        .sidebar-menu--appear {
+            right: 0;
+        }
+
+        .navbar>li>a:hover {
+            color: black;
+            transform: translateY(-7px);
+            border-color: #99ffaa;
+        }
+
+        .dropdown-menu-item a:hover {
+            color: #99ffaa;
+            margin-left: 0.5rem;
+            border-left: 3px solid #99ffaa;
+            border-right: 3px solid #99ffaa;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .navbar>li:hover .dropdown-menu {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* MEDIA QUERIES */
+
+        @media (width>600px) {
+
+            .sidebar-menu-show,
+            .sidebar-menu {
+                display: none;
+            }
+
+            nav {
+                display: inherit;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="web-logo">
-                <img src="./Hello.png" alt="website-logo">
+        <div class="header-container">
+            <div class="logo">
+                <img src="./Hello.png" alt="Logo">
             </div>
-            <span class="navbar-menu-open"> &#9776 </span>
-            <ul class="nav-sidebar menu-links">
-                <span class="navbar-menu-close"> &times </span>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Contact-us</a></li>
-                <li><a href="">Account</a></li>
-            </ul>
-            <ul class="nav-links">
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Contact-us</a></li>
-                <li><a href="">Account</a></li>
-            </ul>
-        </nav>
+            <span class="sidebar-menu-show" onclick="showSidebar()">&#9776</span>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Gallery</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-item">
+                                <h4>Photoshop</h4>
+                                <ul>
+                                    <li><a href="">Field</a></li>
+                                    <li><a href="">Office</a></li>
+                                    <li><a href="">Family</a></li>
+                                    <li><a href="">Overseas</a></li>
+                                    <li><a href="">Conferences</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>Fan Art</h4>
+                                <ul>
+                                    <li><a href="">Copilot</a></li>
+                                    <li><a href="">Drawing</a></li>
+                                    <li><a href="">Painting</a></li>
+                                    <li><a href="">DALLE 3.0</a></li>
+                                    <li><a href="">CHAT-GPT</a></li>
+                                    <li><a href="">G. Designing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">Courses</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-item">
+                                <h4>NonTechnical Courses</h4>
+                                <ul>
+                                    <li><a href="">Marketing</a></li>
+                                    <li><a href="">Entrepreneurship</a></li>
+                                    <li><a href="">Logical Thinking</a></li>
+                                    <li><a href="">Communication</a></li>
+                                    <li><a href="">Finance & co.</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>Programming Journey</h4>
+                                <ul>
+                                    <li><a href="">C++</a></li>
+                                    <li><a href="">Java</a></li>
+                                    <li><a href="">Python</a></li>
+                                    <li><a href="">Flutter</a></li>
+                                    <li><a href="">Javascript</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>FullStack Courses</h4>
+                                <ul>
+                                    <li><a href="">Web Development</a></li>
+                                    <li><a href="">Apps Development</a></li>
+                                    <li><a href="">Data Science (DS/ML/DL)</a></li>
+                                    <li><a href="">Artificial Intelligence (Ai)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Services</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-item">
+                                <h4>NonTechnical Courses</h4>
+                                <ul>
+                                    <li><a href="">Marketing</a></li>
+                                    <li><a href="">Entrepreneurship</a></li>
+                                    <li><a href="">Logical Thinking</a></li>
+                                    <li><a href="">Communication</a></li>
+                                    <li><a href="">Finance & co.</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>FullStack Courses</h4>
+                                <ul>
+                                    <li><a href="">Web Development</a></li>
+                                    <li><a href="">Apps Development</a></li>
+                                    <li><a href="">Data Science (DS/ML/DL)</a></li>
+                                    <li><a href="">Artificial Intelligence (Ai)</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>Programming Journey</h4>
+                                <ul>
+                                    <li><a href="">C++</a></li>
+                                    <li><a href="">Java</a></li>
+                                    <li><a href="">Python</a></li>
+                                    <li><a href="">Flutter</a></li>
+                                    <li><a href="">Javascript</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>Photoshop</h4>
+                                <ul>
+                                    <li><a href="">Field</a></li>
+                                    <li><a href="">Office</a></li>
+                                    <li><a href="">Family</a></li>
+                                    <li><a href="">Overseas</a></li>
+                                    <li><a href="">Conferences</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-menu-item">
+                                <h4>Fan Art</h4>
+                                <ul>
+                                    <li><a href="">Copilot</a></li>
+                                    <li><a href="">Drawing</a></li>
+                                    <li><a href="">Painting</a></li>
+                                    <li><a href="">DALLE 3.0</a></li>
+                                    <li><a href="">CHAT-GPT</a></li>
+                                    <li><a href="">G. Designing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">Account</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
+    <ul class="sidebar-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="">Courses</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Account</a></li>
+        <span class="sidebar-menu-hide" onclick="hideSidebar()">&times</span>
+    </ul>
 </body>
+
+<script>
+    function showSidebar() {
+        document.querySelector('.sidebar-menu').classList.add('sidebar-menu--appear');
+    }
+    function hideSidebar() {
+        document.querySelector('.sidebar-menu').classList.remove('sidebar-menu--appear');
+    }
+</script>
 
 </html>
