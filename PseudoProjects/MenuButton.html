@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Button</title>
+</head>
+<style>
+    /* Global styling */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(45deg, #5fc3e4, #e55d87);
+    }
+
+    .menu-container {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: 2s;
+    }
+
+    .menu-container.menu-active {
+        backdrop-filter: blur(4px);
+    }
+
+    .menu-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 64px;
+        z-index: 10;
+        cursor: pointer;
+        color: #5fc3e4;
+        background-color: rgba(229, 93, 136, 0.5);
+        backdrop-filter: blur(6px);
+        transition: 1.5s;
+    }
+
+    .menu-container.menu-active .menu-icon {
+        color: #e55d87;
+        background-color: #5fc3e4;
+        transform: rotate(315deg);
+    }
+
+    .menu-options {
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        transform-origin: 100px;
+        transition: 0.6s;
+        transition-delay: calc(0.1s * var(--menuOption));
+        transform: rotate(0deg) translateX(80px);
+    }
+
+    .menu-container.menu-active .menu-options {
+        transform: rotate(calc(360deg / 8 * var(--menuOption)));
+    }
+
+    .menu-options:nth-of-type(3) span {
+        font-size: 32px;
+    }
+
+    .menu-options span {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 250, 0.15);
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+        transform: rotate(calc(360deg / -8 * var(--menuOption)));
+        transition: 0.8s;
+
+        &:hover {
+            color: #e55d87;
+            background-color: rgba(95, 195, 228, 0.5);
+        }
+    }
+
+    /* Menu Styling */
+</style>
+
+<body>
+    <div class="menu-container">
+        <div class="menu-icon"> &#43;</div>
+        <!-- home -->
+        <a href="" class="menu-options" style="--menuOption:0;"><span>&#127968;</span></a>
+        <!-- user -->
+        <a href="" class="menu-options" style="--menuOption:1;"><span>&#128100;</span></a>
+        <!-- gear -->
+        <a href="" class="menu-options" style="--menuOption:2; color: #d2e010;"><span>&#9881;</span></a>
+        <!-- mail -->
+        <a href="" class="menu-options" style="--menuOption:3; color: #00ffea;"><span>&#9993;</span></a>
+        <!-- search -->
+        <a href="" class="menu-options" style="--menuOption:4;"><span>&#128269;</span></a>
+        <!-- video -->
+        <a href="" class="menu-options" style="--menuOption:5;"><span>&#127909;</span></a>
+        <!-- game -->
+        <a href="" class="menu-options" style="--menuOption:6;"><span>&#127918;</span></a>
+        <!-- camera -->
+        <a href="" class="menu-options" style="--menuOption:7;"><span>&#128247;</span></a>
+    </div>
+</body>
+<script>
+    const menuContainer = document.querySelector('.menu-container');
+    const menuIcon = document.querySelector('.menu-icon');
+    menuIcon.addEventListener('click', () => {
+        menuContainer.classList.toggle('menu-active');
+    })
+</script>
+
+</html>

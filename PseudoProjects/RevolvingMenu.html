@@ -1,0 +1,180 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolving Menu</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(45deg, #8460ed, #ff1252);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        width: 32px;
+    }
+
+    .menu {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .toggle img {
+        width: 3em;
+    }
+
+    .toggle img:hover {
+        cursor: pointer;
+    }
+
+    .toggle {
+        background-color: white;
+        backdrop-filter: blur(10px);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+        z-index: 1000;
+        transition: 1.25s;
+        opacity: 1;
+    }
+
+    .toggle-no-background {
+        background-color: transparent !important;
+    }
+
+    .menu.active .toggle {
+        box-shadow: 0 0 6px 2px black;
+        transform: rotate(315deg);
+    }
+
+    .menu.active li {
+        transform: rotate(calc(360deg / 8 * var(--i)));
+    }
+
+
+    .menu li {
+        list-style: none;
+        position: absolute;
+        left: 0;
+        transform-origin: 100px;
+        transition: 0.5s;
+        transition-delay: calc(0.1s * var(--i));
+        transform: rotate(0deg) translateX(80px);
+    }
+
+    .menu li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transform: rotate(calc(360deg / -8 * var(--i)));
+        transition: 0.5s;
+        box-shadow: 0 3px 4px rgba(255, 255, 255, 1);
+    }
+</style>
+
+<body>
+    <div class="menu">
+        <div class="toggle">
+            <img src="../icons/add-outline.svg" alt="add-outline">
+        </div>
+        <li style="--i:0;">
+            <a href="#">
+                <img src="../icons/home-outline.svg" alt="home-outline">
+            </a>
+        </li>
+        <li style="--i:1;">
+            <a href="#">
+                <img src="../icons/person-outline.svg" alt="person-outline">
+            </a>
+        </li>
+        <li style="--i:2;">
+            <a href="#">
+                <img src="../icons/settings-outline.svg" alt="settings-outline">
+            </a>
+        </li>
+        <li style="--i:3;">
+            <a href="#">
+                <img src="../icons/mail-outline.svg" alt="mail-outline">
+            </a>
+        </li>
+        <li style="--i:4;">
+            <a href="#">
+                <img src="../icons/key-outline.svg" alt="key-outline">
+            </a>
+        </li>
+        <li style="--i:5;">
+            <a href="#">
+                <img src="../icons/videocam-outline.svg" alt="video-cam-outline">
+            </a>
+        </li>
+        <li style="--i:6;">
+            <a href="#">
+                <img src="../icons/game-controller-outline.svg" alt="game-controller-outline">
+            </a>
+        </li>
+        <li style="--i:7;">
+            <a href="#">
+                <img src="../icons/camera-outline.svg" alt="camera-outline">
+            </a>
+        </li>
+    </div>
+</body>
+<script>
+    const toggle = document.querySelector('.toggle');
+    const menu = document.querySelector('.menu');
+    const randomColor = function () {
+        const hashLetters = '0123456789abcdef';
+        let hashCode = '#';
+        for (let i = 0; i < 8; i++) {
+            hashCode = hashCode + hashLetters[Math.floor(Math.random() * 16)];
+        }
+        return hashCode;
+    }
+    toggle.addEventListener('click', (e) => {
+        menu.classList.toggle('active');
+        toggle.classList.toggle('toggle-no-background');
+    })
+    const menuItems = document.querySelectorAll('.menu li a');
+    menuItems.forEach(item => {
+        item.addEventListener('mouseover', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.target.parentNode.style.backgroundColor = randomColor();
+            }
+            else if (e.target.tagName === 'A') {
+                e.target.style.backgroundColor = randomColor();
+            }
+        });
+        item.addEventListener('mouseout', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.target.parentNode.style.backgroundColor = '#fff';
+            }
+            else if (e.target.tagName === 'A') {
+                e.target.style.backgroundColor = '#fff';
+            }
+        });
+    });
+</script>
+
+</html>
