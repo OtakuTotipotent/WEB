@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* initial styles */
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        transition: background-color .3s, color .3s;
+        background-color: #222;
+        color: #fff;
+    }
+
+    header {
+        display: flex;
+        height: 60px;
+        padding-inline: 2rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.2);
+        flex-wrap: wrap;
+    }
+
+    header h3 {
+        color: #2196f3;
+    }
+
+    label {
+        display: block;
+        width: 60px;
+        height: 28px;
+        position: relative;
+        background-color: #222;
+        transition: .4s;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+    }
+
+    .boll {
+        position: absolute;
+        width: 22px;
+        aspect-ratio: 1;
+        background-color: #fff;
+        border-radius: 50%;
+        top: 3px;
+        left: 3px;
+        transition: .4s;
+    }
+
+    input:checked+.boll {
+        transform: translateX(32px);
+    }
+
+    /* Light Theme Styling */
+
+    body.light-mode {
+        background-color: #fff;
+        color: #000;
+    }
+
+    body.light-mode header {
+        background-color: rgba(0, 0, 0, 0.3);
+
+        & h3 {
+            color: #000;
+        }
+    }
+
+    body.light-mode label {
+        background-color: #2196f3;
+    }
+</style>
+
+<body>
+    <header>
+        <h3>Theme Toggle</h3>
+        <label for="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span class="boll"></span>
+        </label>
+    </header>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+    </script>
+</body>
+
+</html>
