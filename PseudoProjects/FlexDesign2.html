@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only Flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #000;
+            background-color: #bac7d4;
+        }
+
+        .container {
+            margin: 4rem auto;
+            width: 90vw;
+            height: 450px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .left-container {
+            flex-basis: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .upper-left-container,
+        .lower-left-container {
+            flex-basis: 50%;
+            border-radius: 5px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .right-upper,
+        .left-lower {
+            flex-basis: 40%;
+            border-radius: 5px;
+        }
+
+        .left-upper,
+        .right-lower {
+            flex-basis: 60%;
+            border-radius: 5px;
+        }
+
+        .left-upper {
+            background-color: purple;
+        }
+
+        .right-upper {
+            background-color: slategray;
+        }
+
+        .left-lower {
+            background-color: lightcyan;
+        }
+
+        .right-lower {
+            background-color: #000;
+        }
+
+        .right-container {
+            flex-basis: 30%;
+            background-color: #ffffff89;
+            border-radius: 5px;
+            padding: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-container">
+            <div class="upper-left-container">
+                <div class="left-upper"></div>
+                <div class="right-upper"></div>
+            </div>
+            <div class="lower-left-container">
+                <div class="left-lower"></div>
+                <div class="right-lower"></div>
+            </div>
+        </div>
+        <div class="right-container"></div>
+    </div>
+
+</body>
+
+</html>
