@@ -73,6 +73,34 @@
 
     background: linear-gradient(128.87deg, #512bd4 14.05%, #d600aa 89.3%);
 
+radial-gradient(circle farthest-corner at center center, #CF1D0B 0%, #1C1DFF 50%, #FF495C 50%, #0CCF2B 100%);
+
+background: radial-gradient(ellipse farthest-corner at center center, #14CF32 0%, #5625FF 50%, #CF511D 98%);
+
+background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+
+background-image: linear-gradient(to bottom right, #5761B2, #1FC5A8);
+
+background-image: linear-gradient(to bottom right, #FF512F, #DD2476);
+
+ background-image: linear-gradient(45deg, #efe148 0%, #cdfbf2 40%, #bdbdf8 90%);
+
+linear-gradient(60deg, #E21143, #FFB03A);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
