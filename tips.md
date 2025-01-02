@@ -73,6 +73,11 @@
 
     background: linear-gradient(128.87deg, #512bd4 14.05%, #d600aa 89.3%);
 
+    background: linear-gradient(128.87deg, #2196f3 14.05%, #00c491 89.3%);
+
+    background: linear-gradient(128.87deg, #2196f3 14.05%, #00c491 89.3%, #00c491 89.3%);
+
+
 radial-gradient(circle farthest-corner at center center, #CF1D0B 0%, #1C1DFF 50%, #FF495C 50%, #0CCF2B 100%);
 
 background: radial-gradient(ellipse farthest-corner at center center, #14CF32 0%, #5625FF 50%, #CF511D 98%);
