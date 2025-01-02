@@ -83,6 +83,24 @@ body.light-mode .feature-section h2 {
     color: #fff;
 }
 
+body.light-mode .product-feature-section,
+body.light-mode .product-accessories-section {
+    background-color: rgba(17, 43, 39, 0.4);
+}
+
+body.light-mode .product-accessories-section h2 {
+    color: #112b27;
+    transition: 3s;
+}
+
+body.light-mode .accessory-card {
+    color: #ccc;
+}
+
+body.light-mode .product-feature-section h2 {
+    background-image: linear-gradient(128.87deg, #000 14.05%, #911a80 100.3%);
+}
+
 body.light-mode .feature-item {
     box-shadow: #000 0px 25px 50px -12px;
 }
@@ -409,7 +427,7 @@ nav ul a:hover {
 .product-feature-section {
     min-height: calc(100vh - 120px);
     transition: 3s;
-    margin: 1rem auto;
+    margin: 0.4rem auto;
     border-radius: 1rem;
     display: flex;
     gap: 2rem;
@@ -417,20 +435,15 @@ nav ul a:hover {
     align-items: center;
 }
 
-body.light-mode .product-feature-section {
-    background-color: rgba(17, 43, 39, 0.4);
-}
-
 .product-feature-section h2 {
     flex-basis: 60%;
     word-spacing: 4px;
     text-align: center;
     font-size: 2.7rem;
-    background: linear-gradient(180deg, red, orange, yellow, green, blue, indigo, violet);
-    background: linear-gradient(128.87deg, #9780e5 14.05%, #e666cc 89.3%);
+    background-image: linear-gradient(128.87deg, #2196f3 14.05%, #a60450 100.3%, #00c491 89.3%);
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: 2s;
 }
 
 .product-feature-img {
@@ -448,6 +461,46 @@ body.light-mode .product-feature-section {
 
 /*? Accessories */
 
+.product-accessories-section {
+    margin: 0.4rem auto;
+    border-radius: 1rem;
+    transition: 3s;
+}
+
+.product-accessories-section h2 {
+    color: #00c491;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.accessories-container {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.accessory-card {
+    background-color: rgb(145, 26, 128, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #00c491a9;
+    padding: 1rem;
+    text-align: center;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.accessory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px #911a80;
+}
+
+.accessory-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
 
 /** Footer */
 
@@ -480,6 +533,10 @@ footer {
 
     .feature-container {
         justify-content: center;
+    }
+
+    .accessory-card {
+        padding: 15px;
     }
 }
 
