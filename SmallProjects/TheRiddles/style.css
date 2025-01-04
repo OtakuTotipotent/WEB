@@ -71,6 +71,7 @@ p {
 }
 
 img{
+    margin-top: 6px;
 	border-radius: 5px;
 	border: 1px solid black;
 	max-width: 300px;

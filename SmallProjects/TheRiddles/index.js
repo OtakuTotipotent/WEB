@@ -3,11 +3,11 @@
 // ? variables & list objects
 
 const memes = [
-    "D:\Coding-Afnanirshad\WEB\SmallProjects\TheRiddles\library.jpg",
-    "D:\Coding-Afnanirshad\WEB\SmallProjects\TheRiddles\twoBikers.jpg",
-    "D:\Coding-Afnanirshad\WEB\SmallProjects\TheRiddles\Studio Setup 3D Animated Icon (HD).png",
-    "D:\Coding-Afnanirshad\WEB\SmallProjects\TheRiddles\test-hero.png",
-    "D:\Coding-Afnanirshad\WEB\SmallProjects\TheRiddles\mario-run.gif"
+    './library.jpg',
+    './mario-run.gif',
+    './studio.png',
+    './test-hero.png',
+    './twoBikers.jpg'
 ];
 
 const jokes = [
@@ -113,18 +113,30 @@ function getRandomData(type) {
 // ? Action on Button press
 
 function clearOutput() {
-    document.body.querySelector('.website-interaction').remove()
+    try {
+        document.querySelector('#memesDiv img').remove();
+        document.querySelector('#jokesDive p').remove();
+        document.querySelector('#quotesDiv p').remove();
+        document.querySelectorAll('#riddlesDiv p').forEach(e => e.remove());
+    } catch (error) {
+        console.log('already cleared');
+    }
 }
-
 function showMeme() {
-    const random_meme = getRandomData('memes');
     clearOutput();
-    console.log(random_meme);
+    const random_meme = getRandomData('memes');
+    let meme = document.createElement('img');
+    meme.setAttribute('src', random_meme);
+    meme.setAttribute('alt', 'a meme image')
+    document.querySelector('#memesDiv').append(meme);
 }
 
 function showJoke() {
+    clearOutput();
     const random_joke = getRandomData('jokes');
-    console.log(random_joke);
+    const joke = document.createElement('p');
+    joke.innerText = random_joke;
+    document.querySelector('#jokesDiv').appendChild(joke);
 }
 
 function showQuote() {
