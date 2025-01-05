@@ -103,6 +103,13 @@ const data = {
     riddles,
 };
 
+let meme_flag = true;
+let joke_flag = true;
+let quote_flag = true;
+let riddle_flag = true;
+let riddle_ans_flag = true;
+
+
 
 // ? user defined methods
 
