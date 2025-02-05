@@ -1,4 +1,4 @@
-> # "Mini Projects" Purpose
+# "Mini Projects" Purpose
 
 ## This repo contains the applications
 
