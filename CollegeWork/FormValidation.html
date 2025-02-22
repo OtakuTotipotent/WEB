@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Validation</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #4c7d6d6c;
+            display: grid;
+            place-content: center;
+        }
+
+        .container {
+            width: 300px;
+            display: grid;
+            gap: 1rem;
+            padding: 8px;
+            border-radius: 6px;
+            background-color: #ffffff80;
+            box-shadow: 0 0 4px #ffffffb3;
+        }
+
+        form {
+            display: grid;
+            gap: 6px;
+            margin-top: 1rem;
+            padding-inline: 8px;
+        }
+
+        .form-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        input,
+        #department {
+            border-radius: 4px;
+            outline: none;
+            border: none;
+            font-size: 1.1rem;
+            padding: 4px 6px;
+            color: #555;
+        }
+
+        label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding-left: 0.3rem;
+        }
+
+        .optional-item {
+            display: flex;
+            gap: 2rem;
+            margin: .5rem 0 0;
+        }
+
+        .submit-btn {
+            border: none;
+            font-size: 1rem;
+            font-family: 'poppins', sans-serif;
+            padding: 4px;
+            border-radius: 100px;
+            background-color: #4c7d6d6c;
+            width: 80%;
+            cursor: pointer;
+            opacity: 0.7;
+            margin: 1rem auto;
+            transition: .3s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        #form-output {
+            padding: 5px;
+            background-color: #4c7d6d;
+            color: white;
+            font-family: 'poppins', sans-serif;
+            font-size: .9rem;
+            text-align: center;
+            border-radius: 4px;
+            transition: .4s;
+            width: 0px;
+            display: none;
+        }
+
+        #form-output.active {
+            width: 100%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="form-item">
+                <label for="rollNumber">Roll Number</label>
+                <input type="number" name="rollNumber" id="rollNumber">
+            </div>
+            <div class="form-item">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-item">
+                <label for="dob">DOB</label>
+                <input type="date" name="dob" id="dob">
+            </div>
+            <div class="form-item">
+                <label for="department">Department</label>
+                <select name="department" id="department">
+                    <option value="it">IT</option>
+                    <option value="physics">Physics</option>
+                    <option value="botany">Botany</option>
+                    <option value="math">Math</option>
+                    <option value="chemistry">Chemistry</option>
+                </select>
+            </div>
+            <div class="optional-item">
+                <label for="gender">Gender : </label>
+                <div class="gender-section">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="Male">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="Female">
+                </div>
+            </div>
+            <div class="optional-item">
+                <label for="hobby">Hobby : </label>
+                <div class="hobby-section">
+                    <input type="checkbox" name="hobby" id="esports" value="E-Sports">
+                    <label for="esports">E-Sports</label>
+                    <input type="checkbox" name="hobby" id="reading" value="Reading">
+                    <label for="reading">Reading</label>
+                </div>
+            </div>
+            <div class="form-item">
+                <button type="submit" class="submit-btn">Form Submit</button>
+            </div>
+        </form>
+        <div id="form-output"></div>
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            let output_box = document.getElementById("form-output");
+            let name = document.getElementById("name").value;
+            let rollNumber = document.getElementById("rollNumber").value;
+            let dob = document.getElementById("dob").value;
+            let dept = document.getElementById("department").value.toUpperCase();
+            let genderElement = document.querySelector("input[name=gender]:checked");
+            let gender = genderElement ? genderElement.value : "Not specified";
+
+            let hobbies = [];
+            document.querySelectorAll("input[name=hobby]:checked").forEach(hobby => {
+                hobbies.push(hobby.value);
+            });
+
+            output_box.classList.toggle("active");
+            output_box.innerText = `Hello ${name}, your roll number is ${rollNumber}, your DOB is ${dob}, you are from the ${dept} department, your gender is ${gender}, and your hobbies are ${hobbies.join(", ")}.`;
+        });
+    </script>
+</body>
+
+</html>
