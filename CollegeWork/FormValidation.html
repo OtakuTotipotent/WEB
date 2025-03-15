@@ -6,30 +6,44 @@
     <style>
         * {
             margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
             width: 100%;
-            height: 100vh;
-            background-color: #4c7d6d6c;
+            min-height: 100vh;
+            background-color: #4c7d6d6f;
             display: grid;
             place-content: center;
         }
 
+        ::selection {
+            background-color: #4c7d6d;
+            color: #fff;
+        }
+
+        ::spelling-error {
+            text-decoration: none;
+            color: black;
+        }
+
         .container {
-            width: 300px;
-            display: grid;
-            gap: 1rem;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 8px;
             border-radius: 6px;
             background-color: #ffffff80;
-            box-shadow: 0 0 4px #ffffffb3;
+            box-shadow: 0 0 6px 3px #33333333,
+                inset 0 0 6px 3px #4c7d6d6f;
         }
 
         form {
+            width: 100%;
             display: grid;
-            gap: 6px;
+            gap: 8px;
             margin-top: 1rem;
             padding-inline: 8px;
         }
@@ -38,17 +52,30 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 3px;
         }
 
         input,
         #department {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #555;
             border-radius: 4px;
             outline: none;
             border: none;
-            font-size: 1.1rem;
-            padding: 4px 6px;
-            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 8px;
+            border-bottom: 3px solid transparent;
+            transition: .3s linear;
+            font-family: "Poppins";
+            letter-spacing: .2px;
+            text-align: center;
+        }
+
+        input:focus,
+        input:hover {
+            border-color: #4c7d6d;
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
         label {
@@ -56,12 +83,25 @@
             font-size: 0.9rem;
             font-weight: 500;
             padding-left: 0.3rem;
+            letter-spacing: .2px;
         }
 
         .optional-item {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
+            justify-content: space-between;
             margin: .5rem 0 0;
+        }
+
+        .gender-section,
+        .hobby-section {
+            display: flex;
+            gap: 8px;
+
+            & span {
+                display: flex;
+                align-items: center;
+            }
         }
 
         .submit-btn {
@@ -73,7 +113,7 @@
             background-color: #4c7d6d6c;
             width: 80%;
             cursor: pointer;
-            opacity: 0.7;
+            opacity: 0.8;
             margin: 1rem auto;
             transition: .3s;
 
@@ -83,28 +123,37 @@
         }
 
         #form-output {
-            padding: 5px;
-            background-color: #4c7d6d;
+            padding: 4px;
             color: white;
             font-family: 'poppins', sans-serif;
-            font-size: .9rem;
-            text-align: center;
+            font-size: 13px;
             border-radius: 4px;
-            transition: .4s;
+            transition: .5s linear;
             width: 0px;
-            display: none;
+            min-height: 0px;
+            background-color: #4c7d6d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #form-output.active {
             width: 100%;
-            display: inline-block;
+            min-height: 40px;
+            background-color: #4c7d6d;
+        }
+
+        #form-output.error {
+            width: 100%;
+            min-height: 40px;
+            background-color: rgba(255, 0, 0, 0.5);
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <form>
+        <form action="" method="">
             <div class="form-item">
                 <label for="rollNumber">Roll Number</label>
                 <input type="number" name="rollNumber" id="rollNumber">
@@ -120,7 +169,7 @@
             <div class="form-item">
                 <label for="department">Department</label>
                 <select name="department" id="department">
-                    <option value="it">IT</option>
+                    <option value="it">Computer Science</option>
                     <option value="physics">Physics</option>
                     <option value="botany">Botany</option>
                     <option value="math">Math</option>
@@ -130,47 +179,69 @@
             <div class="optional-item">
                 <label for="gender">Gender : </label>
                 <div class="gender-section">
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id="male" value="Male">
-                    <label for="female">Female</label>
-                    <input type="radio" name="gender" id="female" value="Female">
+                    <span>
+                        <input type="radio" name="gender" id="male" value="Male" required>
+                        <label for="male">Male</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="gender" id="female" value="Female">
+                        <label for="female">Female</label>
+                    </span>
                 </div>
             </div>
             <div class="optional-item">
                 <label for="hobby">Hobby : </label>
                 <div class="hobby-section">
-                    <input type="checkbox" name="hobby" id="esports" value="E-Sports">
-                    <label for="esports">E-Sports</label>
-                    <input type="checkbox" name="hobby" id="reading" value="Reading">
-                    <label for="reading">Reading</label>
+                    <span>
+                        <input type="checkbox" name="hobby" id="esports" value="E-Sports">
+                        <label for="esports">ESports</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="hobby" id="reading" value="Reading">
+                        <label for="reading">Reading</label>
+                    </span>
                 </div>
             </div>
             <div class="form-item">
-                <button type="submit" class="submit-btn">Form Submit</button>
+                <button class="submit-btn">Form Submit</button>
             </div>
         </form>
-        <div id="form-output"></div>
+        <div id="form-output" class=""></div>
     </div>
 
     <script>
-        document.querySelector("form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            let output_box = document.getElementById("form-output");
-            let name = document.getElementById("name").value;
-            let rollNumber = document.getElementById("rollNumber").value;
-            let dob = document.getElementById("dob").value;
-            let dept = document.getElementById("department").value.toUpperCase();
-            let genderElement = document.querySelector("input[name=gender]:checked");
-            let gender = genderElement ? genderElement.value : "Not specified";
+        // DOM selections & variables
+        const form = document.querySelector('form');
+        const output_box = document.getElementById('form-output');
+        const inputs = document.querySelectorAll('.form-item input');
+        let genderElement = document.querySelector("input[name=gender]:checked");
+        let gender = genderElement ? genderElement.value : "Not specified";
 
-            let hobbies = [];
-            document.querySelectorAll("input[name=hobby]:checked").forEach(hobby => {
-                hobbies.push(hobby.value);
-            });
-
-            output_box.classList.toggle("active");
-            output_box.innerText = `Hello ${name}, your roll number is ${rollNumber}, your DOB is ${dob}, you are from the ${dept} department, your gender is ${gender}, and your hobbies are ${hobbies.join(", ")}.`;
+        let hobbies = [];
+        document.querySelectorAll("input[name=hobby]:checked").forEach(hobby => {
+            hobbies.push(hobby.value);
         });
+
+        // Action & methods
+        form.method
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', (e) => {
+                if (input.value.trim() === '') {
+                    showMessage('error', 'Please enter data in', input.tagName);
+                }
+            });
+        });
+
+        // Helper methods
+        function showMessage(msgType, msgText, msgTarget) {
+            output_box.textContent = '';
+            output_box.classList.add(`${type}`);
+            setInterval(() => {
+                output_box.innerText = `${msgText} ${msgTarget}`;
+            }, 800);
+        }
+
     </script>
 </body>
 
