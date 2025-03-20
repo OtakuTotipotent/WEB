@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollbar Designs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::selection {
+            background-color: purple;
+            color: greenyellow;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            font-family: poppins;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0 0;
+            background: linear-gradient(to right, yellowgreen, pink, purple);
+            width: fit-content;
+            background-clip: text;
+            color: transparent;
+            margin: auto;
+            cursor: default;
+            border-bottom: 1.2px solid #ccc;
+
+            &:hover {
+                border-color: green;
+            }
+        }
+
+        .container {
+            margin: 2rem auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px 20px;
+            width: min(min-content, 90%);
+        }
+
+        .wrapper {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            transition: .1s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0px 0px 16px #0000001a;
+            }
+        }
+
+        .box {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            gap: 2px;
+            background: linear-gradient(to right, purple, green, yellowgreen, green, yellow, red, pink);
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+        }
+
+        .heading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            width: 100%;
+            z-index: 10;
+
+            & h2 {
+                font-size: 1.1rem;
+                text-align: center;
+                background: linear-gradient(to right, green, orange);
+                background-clip: text;
+                color: transparent;
+                padding: 10px 2px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+
+        .card {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            padding: 70px 16px 16px;
+            line-height: 200%;
+        }
+
+        /* SIMPLE SCROLLBAR */
+        .simple_scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: yellowgreen white;
+        }
+
+        /* CUSTOM SCROLLBAR */
+        .custom_scrollbar {
+            position: relative;
+            scrollbar-width: none;
+        }
+
+        .custom_track {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 6px;
+            background-color: rgba(153, 205, 50, 0.4);
+            border-radius: 3px;
+            z-index: 10;
+        }
+
+        .custom_thumb {
+            height: 100%;
+            width: 20%;
+            background-color: yellowgreen;
+            border-radius: 3px;
+            transition: .3s;
+
+            &:hover {
+                background-color: green;
+            }
+        }
+
+        /* GLASSMORPHISM TRANSPARENT SCROLLBAR */
+        .glassmorphism_transparent_scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .glassmorphism_transparent_scrollbar::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
+
+        .glassmorphism_transparent_scrollbar::-webkit-scrollbar-thumb {
+            background-color: green;
+            border-radius: 10px;
+            transition: .3s;
+        }
+
+        .glassmorphism_transparent_scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Beautiful Scrollbar Designs</h1>
+    <div class="container">
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Simple Scrollbar</h2>
+            </div>
+            <div class="box simple_scrollbar">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Custom Scrollbar</h2>
+            </div>
+            <div class="box custom_scrollbar">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+            <div class="custom_track">
+                <div class="custom_thumb"></div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphic Transparent Scrollbar</h2>
+            </div>
+            <div class="box glassmorphism_transparent_scrollbar">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Glassmorphism Scrollbar</h2>
+            </div>
+            <div class="box ">
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis non, necessitatibus magnam
+                    eligendi dicta atque dolorum, nihil sapiente mollitia eveniet a. Neque porro nam eos adipisci quod
+                    eum
+                    necessitatibus.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CUSTOM SCROLLBAR
+        const custom_box = document.querySelector('.custom_scrollbar');
+        const custom_thumb = document.querySelector('.custom_thumb');
+        function updateCustomThumb() {
+            const scroll_width = custom_box.scrollWidth;
+            const client_width = custom_box.clientWidth;
+            const scroll_left = custom_box.scrollLeft;
+
+            const thumb_width = (client_width / scroll_width) * 100;
+            custom_thumb.style.width = `${thumb_width}%`;
+
+            const max_scroll_left = 100 - thumb_width;
+            const thumb_move = (scroll_left / (scroll_width - client_width)) * max_scroll_left;
+
+            custom_thumb.style.transform = `translateX(${thumb_translate})%`;
+        }
+        custom_box.addEventListener('scroll', updateCustomThumb());
+        window.addEventListener('resize', updateCustomThumb());
+        updateCustomThumb();
+    </script>
+</body>
+
+</html>
